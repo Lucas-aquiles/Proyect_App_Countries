@@ -14,6 +14,13 @@ const basename = path.basename(__filename);
 
 const modelDefiners = [];
 
+
+const actArray = ["Observacion de atractivos de la naturaleza", "Observacion de fauna",
+  "Observacion de flora", "Caminata", "Ciclismo", "Cabalgata", "Buceo", "Descenso en rios",
+  "Pesca recreativa", "Paracaidismo", "Vuelo Parapente", "Recorridos por Bodegas",
+  "Visitas a Centros Comerciales", "Visitas guiadas al patrimonio historico ", "Rafting"]
+
+
 // Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
 fs.readdirSync(path.join(__dirname, '/models'))
   .filter((file) => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js'))
@@ -41,4 +48,5 @@ Activity.belongsToMany(Country, { through: "countryActivity" })
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
   conn: sequelize,     // para importart la conexión { conn } = require('./db.js');
+  actArray,
 };
