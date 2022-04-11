@@ -40,25 +40,50 @@ const allCountries = async () => {
 }
 
 
-const loadActivities = async () => {
+// const loadActivities = async () => {
 
-    const saveActivities = actArray.map(e => {
-        return {
-            name: e,
+//     const saveActivities = actArray.map(e => {
+//         return {
+//             name: e,
+//         }
+//     })
+//     saveActivities.forEach(el => {
+//         Activity.findOrCreate({
+//             where: { name: el.name }
+//         })
+//     })
+
+// }
+// ----------------------------------
+const validarActivity = async (name, country) => {
+
+    const coincidir = await Country.findAll({
+
+        where: {
+            name: country
+        }, include: {
+            model: Activity,
+            attributes: { name: name }
+
         }
     })
-    saveActivities.forEach(el => {
-        Activity.findOrCreate({
-            where: { name: el.name }
-        })
-    })
 
+    if (coincidir[0].activities) {
 
+        let rC = coincidir[0].activities
+        let aB = rC.map(e => e.name)
+
+        await aB.forEach(element => {
+            if (element === name) {
+                throw new Error(` el pais ${country} ya contiene la actividad: ${name}`)
+            }
+        });
+    }
 }
-
 
 
 module.exports = {
     allCountries,
-    loadActivities
+    validarActivity,
+    // loadActivities
 };
