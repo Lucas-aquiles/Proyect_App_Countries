@@ -1,0 +1,15 @@
+.container_card{
+    /* margin: auto; */
+        width: 300px;
+        border: 2px solid grey;
+         border-radius: 10px;
+         height: 20rem;
+         margin-bottom: 2.5rem;
+         margin-top: 2.5rem;
+}
+
+img{
+    width: 95%;
+    height: 10rem;
+    border: solid;
+}

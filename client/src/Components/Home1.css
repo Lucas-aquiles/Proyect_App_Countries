@@ -1,0 +1,38 @@
+.container
+{
+    width: 100%;
+    height: 100vh;
+}
+
+header{
+    height: 20%;
+}
+.paginado{
+    height: 20%;
+    border:solid;
+    background: red;
+}
+.container1{
+    display: flex;
+justify-content: space-around;
+align-items: stretch ;  /* ocupa todo el alto del contenedor */
+    
+}
+section{
+    display: flex;
+    width: 80%;
+    flex-direction: row;   /*  row .. fila    colum */
+    flex-wrap: wrap;     
+    /* si te falta espacio baja y adapta la caja  */
+    justify-content: space-around;  /* q los elementos se adapten al espacio ,  dejandose unos espacios, al ancho,  */
+    /* flex-flow: row wrap;   esto sive si el padre tiene un tamaño definido
+    align-content: space-around; */
+
+}
+aside{
+    border:solid;
+    background-color: aqua;
+    width: 20%;
+    /* display: none; */
+    
+}
