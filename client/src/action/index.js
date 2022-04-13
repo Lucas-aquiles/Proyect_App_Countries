@@ -36,14 +36,49 @@ export function getActivities() {
             throw new Error(error)
         }
     };
+}
 
 
+export function filter_Continent(payload) {
+    return {
+        type: 'FILTER_CONTINENT',
+        payload
+    }
+}
+
+export function orderlyByName(payload) {
+    return {
+        type: 'ORDELY_NAME',
+        payload
+    }
+}
+export function orderlyByPoblation(payload) {
+    return {
+        type: 'ORDELY_POBLATION',
+        payload
+    }
 }
 
 
 
+export function searchCountry(payload) {
+    return async function (dispatch) {
+        const json = await axios.get(`http://localhost:3001/countries?name=${payload}`)
+        // console.log("aaaaa", json.data, "aaaaa")
+        return dispatch({
+            type: 'SEARCH_COUNTRY',
+            payload: json.data
+        })
+    }
+}
 
 
+export function getCountriesFront() {
+    return {
+        type: 'GET-COUNTRIES_FRONT',
+
+    }
+}
 
 
 

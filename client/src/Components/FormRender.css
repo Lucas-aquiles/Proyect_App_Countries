@@ -1,0 +1,13 @@
+
+.formu{
+    border: solid;
+    position: absolute;
+    top:5rem;
+    left: 25rem;
+    color: yellowgreen;
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+
+}
+
