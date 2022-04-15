@@ -15,7 +15,19 @@ server.get('/', async (req, res) => {
         try {
             const resultApi = await axios.get(API_NAME + nameCountry)
             const resultAxios = resultApi.data
-            res.status(200).json(resultAxios)
+            const sendSearch = resultAxios.map(e => {
+                return {
+                    name: e.name.common,
+                    id: e.cioc,
+                    continent: e.continents[0],
+                    flag_image: e.flags[0],
+                    population: e.population
+                }
+            }
+            )
+
+
+            res.status(200).json(sendSearch)
         } catch (err) {
             res.status(404).send("No se encontro")
         }
