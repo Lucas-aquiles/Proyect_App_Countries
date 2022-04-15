@@ -1,17 +1,11 @@
 import React from 'react'
-import FormRender from './FormRender'
-
-
-
+import FormRender from '../Components/Form/FormRender'
 
 
 
 const Form = () => {
 
-
-
-
-
+    //flag_image
 
     return (
         <div >

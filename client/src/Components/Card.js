@@ -10,7 +10,7 @@ export default function Card({ name, img, id, continent }) {
 
         <div className='container_card'   >
 
-            <img src={img} alt="" />
+            <img className='imgCard' src={img} alt="" />
 
             <div>
                 <h4 >{name}</h4>

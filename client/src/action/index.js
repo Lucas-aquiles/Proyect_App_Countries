@@ -79,6 +79,13 @@ export function getCountriesFront() {
 
     }
 }
+export function searchFilter(payload) {
+
+    return {
+        type: "SEARCH_FILTER",
+        payload
+    }
+}
 
 
 

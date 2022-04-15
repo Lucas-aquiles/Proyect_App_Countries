@@ -7,14 +7,14 @@ import { getCountries } from '../action/index'
 import { Link } from 'react-router-dom';
 
 
-
-
 const LandingPage = () => {
-    const dispatch = useDispatch()
+
+    const dispatch = useDispatch();
+
 
     useEffect(() => {
         dispatch(getCountries())
-    }, [])
+    })
 
 
     return (

@@ -4,7 +4,8 @@
 const initialState = {
     countries: [],
     countriesAux: [],
-    activities: []
+    activities: [],
+    searchForm: [],
 }
 
 function rootReducer(state = initialState, action) {
@@ -129,7 +130,17 @@ function rootReducer(state = initialState, action) {
                 ...state,
                 countries: stateAux
             };
+        case "SEARCH_FILTER":
+            const firstfilt = action.payload.trim()
+            const str = firstfilt.charAt(0).toUpperCase() + firstfilt.slice(1)
+            const auxState = state.countriesAux
+            const filterCounry = auxState.filter(e => e.name.slice(0, 2) === str.slice(0, 2))
 
+            return {
+                ...state,
+                searchForm: filterCounry
+
+            }
 
 
 
