@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getActivities } from '../action/index'
+import { getActivities, clearError_Create } from '../action/index'
 import Search from './Search';
-
+import ErrorSearch from './ErrorSearch'
 
 
 
 const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {
 
     const allActivities = useSelector((state) => state.activities)
-
+    const eSearch = useSelector((state) => state.postmsj)
+    console.log(eSearch)
     const dispatch = useDispatch()
 
 
@@ -17,13 +18,19 @@ const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {
         dispatch(getActivities())
     }, [])
 
+    function clearError_search() {
+        dispatch(clearError_Create())
+    }
+
+
+
 
 
     var sumador = 1
     return (
         <div>
             <Search />
-
+            {eSearch === "errorSearch" && <ErrorSearch clearError_search={clearError_search} />}
 
             <select className='slh' onChange={e => handlefilterAct(e)}>
                 <option value="act"> Activities</option>

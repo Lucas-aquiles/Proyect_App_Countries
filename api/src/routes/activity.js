@@ -10,14 +10,16 @@ const { validarActivity } = require("./function");
 server.post('/', async (req, res) => {
 
     let { name, difficulty, duration, season, country } = req.body
+    console.log(name, difficulty, duration, season, country)
+
+    let difficultyChange = difficulty[1].trim()
+    let seasonChange = season.map(e => e.name.trim().slice(0, 6).trim())
+
+
     try {
         await validarActivity(name, country);
     } catch (err) {
-        return res.status(404).json({
-            error: err,
-            name: name,
-            country: country
-        })
+        return res.status(200).send("ERROR")
     }
 
     //  --------------------------
@@ -26,9 +28,9 @@ server.post('/', async (req, res) => {
 
         const createActivity = await Activity.create({
             name: name,
-            difficulty: difficulty,
+            difficulty: difficultyChange,
             duration: duration,
-            season: season,
+            season: seasonChange,
         })
 
         let countryBd = await Country.findAll({
@@ -38,7 +40,7 @@ server.post('/', async (req, res) => {
         })
 
         await createActivity.addCountry(countryBd)
-        res.status(200).send("Creado con exitooooo");
+        res.status(200).send("Creado");
     } catch (err) {
         res.status(404).send("error en la creacion de actividad")
     }

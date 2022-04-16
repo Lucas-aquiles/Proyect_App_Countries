@@ -6,6 +6,7 @@ const initialState = {
     countriesAux: [],
     activities: [],
     searchForm: [],
+    postmsj: []
 }
 
 function rootReducer(state = initialState, action) {
@@ -22,13 +23,10 @@ function rootReducer(state = initialState, action) {
 
             const notdata = [{ name: 'No encontrado', id: "2d2", activities: "nada" }]
 
-            const countryState = state.countries.length === 0 ? notdata : state.countries
+            const countryState = state.countriesAux.length === 0 ? notdata : state.countriesAux
+            const paisFiltrado = countryState.filter(el => el.activities.find(e => e.name === action.payload))
 
 
-            const paisFiltrado = countryState.filter(el => el.activities.includes(action.payload))
-
-
-            console.log(paisFiltrado)
             return {
 
                 ...state,
@@ -37,11 +35,11 @@ function rootReducer(state = initialState, action) {
             };
 
         case "GET_ACTIVITY":
-            let arrayActivity = [{ name: "Rafting" }, { name: "Sky" }, { name: "Camino del Vino" }, { name: "Gastronomia local" }]
-            let totalAct = action.payload.concat(arrayActivity)
+            // let arrayActivity = [{ name: "Rafting" }, { name: "Sky" }, { name: "Camino del Vino" }, { name: "Gastronomia local" }]
+            let totalAct = action.payload
             return {
                 ...state,
-                activities: totalAct,
+                activities: totalAct
             };
 
         case "FILTER_CONTINENT":
@@ -141,6 +139,36 @@ function rootReducer(state = initialState, action) {
                 searchForm: filterCounry
 
             }
+
+        case "SEND_POST":
+            return {
+                ...state,
+                postmsj: action.payload,
+
+            };
+
+        case "CLEAR_ACTIVITIES":
+            return {
+                ...state,
+                searchForm: action.payload
+            }
+
+
+        case "CLEAR_ERROR_CREATE":
+            return {
+                ...state,
+                postmsj: action.payload
+            }
+
+
+        case 'ERROR_SEARCH':
+            return {
+                ...state,
+                postmsj: action.payload
+            }
+
+
+
 
 
 

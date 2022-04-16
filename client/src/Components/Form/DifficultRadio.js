@@ -1,15 +1,15 @@
 import React from 'react'
 
-const DifficultRadio = ({ cambioDifficult, input }) => {
+const DifficultRadio = ({ cambioDifficult, inputd }) => {
 
 
 
-    var array = [{ name: "Very difficult", id: 1 }, { name: "Hard ", id: 2 }, { name: "Middle", id: 3 }, { name: "Normal", id: 4 }, { name: "Easy", id: 5 }]
+    var array = [{ name: "Very difficult", id: "1" }, { name: "Hard ", id: "2" }, { name: "Middle", id: "3" }, { name: "Normal", id: "4" }, { name: "Easy", id: "5" }]
 
 
     return (
         <div>
-            <p>{input}</p>
+            <p>{inputd[0]}</p>
 
             {array.map(e =>
                 <label key={e.id} >
@@ -17,8 +17,11 @@ const DifficultRadio = ({ cambioDifficult, input }) => {
                         id={e.id}
                         type="radio"
                         value={e.name}
-                        checked={input === e.name ? true : false}
                         onChange={cambioDifficult}
+                        name={e.name}
+
+                        checked={inputd[1] === e.id ? true : false}
+
                     />
                     <span id={e.id}>
                         {e.name}

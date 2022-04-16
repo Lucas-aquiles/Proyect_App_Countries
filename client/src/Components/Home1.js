@@ -11,7 +11,6 @@ import Aside from './Aside';
 const Home1 = () => {
 
     const allCountries = useSelector((state) => state.countries)
-
     const dispatch = useDispatch()
 
     // useEffect(() => {
@@ -33,11 +32,11 @@ const Home1 = () => {
     }
 
     function handlefilterAct(e) {
-        console.log(e.target.value)
+        e.preventDefault();
+
         if (e.target.value === "act") {
             dispatch(getCountries())
         } else {
-            e.preventDefault();
             dispatch(filter_Activities(e.target.value));
             setPagina(1);
             // setOrden(`Ordenado ${e.target.value}`)

@@ -62,13 +62,25 @@ export function orderlyByPoblation(payload) {
 
 
 export function searchCountry(payload) {
+
     return async function (dispatch) {
-        const json = await axios.get(`http://localhost:3001/countries?name=${payload}`)
-        // console.log("aaaaa", json.data, "aaaaa")
-        return dispatch({
-            type: 'SEARCH_COUNTRY',
-            payload: json.data
-        })
+        try {
+            const json = await axios.get(`http://localhost:3001/countries?name=${payload}`)
+            // console.log("aaaaa", json.data, "aaaaa")
+            return dispatch({
+                type: 'SEARCH_COUNTRY',
+                payload: json.data
+            })
+        } catch (err) {
+            return dispatch({
+                type: 'ERROR_SEARCH',
+                payload: "errorSearch"
+            })
+
+
+
+
+        }
     }
 }
 
@@ -86,6 +98,37 @@ export function searchFilter(payload) {
         payload
     }
 }
+
+export function postActivities(payload) {
+    return async function (dispatch) {
+        const result = await axios.post("http://localhost:3001/activities", payload);
+        return dispatch({
+            type: "SEND_POST",
+            payload: result
+        })
+
+    }
+}
+
+
+
+export function clearActivities() {
+    return {
+        type: "CLEAR_ACTIVITIES",
+        payload: []
+    }
+}
+
+export function clearError_Create() {
+    return {
+        type: "CLEAR_ERROR_CREATE",
+        payload: []
+    }
+}
+
+
+
+
 
 
 

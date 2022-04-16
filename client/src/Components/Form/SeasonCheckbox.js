@@ -7,8 +7,6 @@ const SeasonCheckbox = ({ inputs, setInput, input }) => {
         { id: 4, name: ' Autumn  🍁' },
     ]
 
-
-
     // 🍰
 
     function onChange(id) {
@@ -28,14 +26,6 @@ const SeasonCheckbox = ({ inputs, setInput, input }) => {
 
     }
 
-
-
-    // handleCheckbox(arr.selected)
-
-    // handleCheckbox(1)
-
-
-
     return (
         <>
 
@@ -49,8 +39,8 @@ const SeasonCheckbox = ({ inputs, setInput, input }) => {
                         <label key={item.id}>
                             <input type="checkbox"
                                 onChange={() => onChange(item.id)}
-                                selected={inputs.includes(item.id)}
-
+                                // selected={inputs.includes(item.id)}
+                                checked={inputs.find(e => e.id === item.id) ? true : false}
                             ></input>
 
                             <span>{item.name}</span>
