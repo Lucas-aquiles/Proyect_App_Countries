@@ -5,6 +5,7 @@ import React from "react";
 import Home1 from './Components/Home1';
 import LandingPage from './Components/LandingPage';
 import Form from './Components/Form';
+import Details from './Components/Details';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <Route path="/" element={<LandingPage />} />
       <Route path="/home" element={<Home1 />} />
       <Route path='/create' element={<Form />} />
-      {/* <Route path='details/:id' element={<Details />} /> */}
+      <Route path='details/:id' element={<Details />} />
     </Routes>
 
 

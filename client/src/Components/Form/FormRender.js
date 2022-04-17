@@ -97,7 +97,7 @@ const FormRender = () => {
       dispacth(postActivities(input));
       setInput({
         name: " ",
-        difficulty: " ",
+        difficulty: [],
         season: [],
         duration: "",
         country: [],

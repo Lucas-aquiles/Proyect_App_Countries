@@ -6,7 +6,8 @@ const initialState = {
     countriesAux: [],
     activities: [],
     searchForm: [],
-    postmsj: []
+    postmsj: [],
+    details: []
 }
 
 function rootReducer(state = initialState, action) {
@@ -27,6 +28,7 @@ function rootReducer(state = initialState, action) {
             const paisFiltrado = countryState.filter(el => el.activities.find(e => e.name === action.payload))
 
 
+
             return {
 
                 ...state,
@@ -39,7 +41,7 @@ function rootReducer(state = initialState, action) {
             let totalAct = action.payload
             return {
                 ...state,
-                activities: totalAct
+                activities: totalAct,
             };
 
         case "FILTER_CONTINENT":
@@ -146,7 +148,6 @@ function rootReducer(state = initialState, action) {
                 postmsj: action.payload,
 
             };
-
         case "CLEAR_ACTIVITIES":
             return {
                 ...state,
@@ -168,6 +169,13 @@ function rootReducer(state = initialState, action) {
             }
 
 
+
+
+        case "CALL_ID":
+            return {
+                ...state,
+                details: action.payload,
+            }
 
 
 

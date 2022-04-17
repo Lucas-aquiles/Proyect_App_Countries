@@ -62,7 +62,6 @@ export function orderlyByPoblation(payload) {
 
 
 export function searchCountry(payload) {
-
     return async function (dispatch) {
         try {
             const json = await axios.get(`http://localhost:3001/countries?name=${payload}`)
@@ -76,10 +75,6 @@ export function searchCountry(payload) {
                 type: 'ERROR_SEARCH',
                 payload: "errorSearch"
             })
-
-
-
-
         }
     }
 }
@@ -110,8 +105,6 @@ export function postActivities(payload) {
     }
 }
 
-
-
 export function clearActivities() {
     return {
         type: "CLEAR_ACTIVITIES",
@@ -125,6 +118,26 @@ export function clearError_Create() {
         payload: []
     }
 }
+
+
+
+export function callId(payload) {
+    return function (dispatch) {
+        try {
+            return fetch(`http://localhost:3001/countries/${payload}`)
+                .then(response => response.json())
+                .then(details => {
+                    dispatch({
+                        type: "CALL_ID", payload: details
+                    });
+                })
+        } catch (error) {
+            throw new Error(error)
+        }
+    };
+}
+
+
 
 
 
