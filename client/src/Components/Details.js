@@ -37,7 +37,32 @@ const Details = () => {
             <h5>{dateDetails[0].sub_region}</h5>
             <h4> {dateDetails[0].area}km2 </h4>
             <h4> {dateDetails[0].population} habitantes </h4>
-            <h4>  {dateDetails[0].activities.map(elemento => elemento.name + "  ")}   </h4>
+            <h4>  {dateDetails[0].activities.map(elemento =>
+                <div>
+                    <h2>  {elemento.name}        </h2>
+                    <h4>  {elemento.difficulty}      </h4>
+                    <h4>  {elemento.duration}      </h4>
+                    <h4>  {elemento.season.map(e => {
+                        if (e === "Winter") {
+                            return "" + e + "☃️" + " . "
+                        }
+                        if (e === "Summer") {
+                            return "" + e + "☀️" + " . "
+                        }
+                        if (e === "Pring") {
+                            return e + "🌺" + " . "
+                        }
+                        if (e === "Autumn") {
+                            return e + "🍁" + " . "
+                        }
+                    }
+                    )}      </h4>
+
+                </div>
+
+
+
+            )}   </h4>
 
 
         </div>

@@ -10,13 +10,14 @@ import Creado from './Creado'
 
 const FormRender = () => {
   const dispacth = useDispatch()
-  const dataSearch = useSelector((state) => state.searchForm)
   const msjPost = useSelector((state) => state.postmsj)
   console.log(msjPost.data)
   // if (msjPost.data.error) {
   //   console.log("ERorrrrrrrrrrrrrrrrrrrrrrrrrrrrrr")
   // }
-
+  const dataSearch = useSelector((state) => state.searchForm)
+  const [serchAux, setSearchAux] = useState(false)
+  console.log(serchAux)
   const [ver, setVer] = useState("")
 
   const [input, setInput] = useState({
@@ -27,7 +28,11 @@ const FormRender = () => {
     country: []
 
   })
-
+  useEffect(() => {
+    setTimeout(() => {
+      setSearchAux(false)
+    }, 2000);
+  }, [serchAux])
 
   useEffect(() => {
   }, [input.season])
@@ -60,10 +65,14 @@ const FormRender = () => {
 
   }
 
+
   function sendDis(e) {
     e.preventDefault()
     dispacth(searchFilter(ver))
     setVer("")
+    if (dataSearch.length === 0) {
+      setSearchAux(!serchAux)
+    }
   }
 
 
@@ -155,7 +164,8 @@ const FormRender = () => {
         <div>
           <input type="text" name='name' value={ver} onChange={inputSearch} />
           <button onClick={sendDis}>O</button>
-          {dataSearch.length === 0 ? <h2> """No encontrado""""" </h2> : dataSearch.map(e =>
+
+          {dataSearch.length === 0 && serchAux ? "No encontrado" : dataSearch.map(e =>
             <div key={e.id} className='searchfilter'>
               <h5  >  {e.name} </h5>
               <img className='imgForm' src={e.flag_image} alt="" />
