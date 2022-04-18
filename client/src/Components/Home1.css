@@ -2,6 +2,7 @@
 {
     width: 100%;
     height: 100vh;
+
 }
 
 header{
@@ -13,6 +14,7 @@ header{
     background: red;
 }
 .container1{
+    
     display: flex;
 justify-content: space-around;
 align-items: stretch ;  /* ocupa todo el alto del contenedor */

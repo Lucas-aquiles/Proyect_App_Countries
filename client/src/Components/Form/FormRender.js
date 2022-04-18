@@ -88,12 +88,12 @@ const FormRender = () => {
   }
   function deleteEve(e) {
     e.preventDefault()
-
-    var lets = "1" + e.target.value
-    var tra = lets.slice(1)
+    var str = String(e.target.value)
+    // var lets = "1" + e.target.value
+    // var tra = lets.slice(1)
     setInput({
       ...input,
-      country: input[e.target.name].filter((e) => e !== tra)
+      country: input[e.target.name].filter((e) => e !== str)
     })
   }
   // ----------------------------------------------

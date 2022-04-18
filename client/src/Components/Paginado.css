@@ -3,6 +3,24 @@ button{
     cursor: pointer;
     background-color: aquamarine;
     font-weight: 800;
+    border: 1px solid white 
 
 
+}
+.pageNumbers{
+    display: inline;
+
+
+}
+.pageNumbers button.active{
+background-color: white;
+color: black;
+
+}
+.loadmore{
+    background-color: transparent;
+    color:white;
+    font-size: 1.2rem;
+    border : 1px  solid white;
+    cursor: pointer;
 }

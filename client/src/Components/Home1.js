@@ -87,7 +87,6 @@ const Home1 = () => {
 
 
 
-
     return (
 
 
@@ -101,8 +100,8 @@ const Home1 = () => {
             < div className='paginado' >
                 <Paginado sizeArray={sizeArray}
                     allCountries={allCountries.length}
-                    paginado={paginado}
-                />   </div>
+                    paginado={paginado} pagina={pagina} setPagina={setPagina} setSize={setSize}
+                />  </div>
 
             <div className="container1">
                 <section >
