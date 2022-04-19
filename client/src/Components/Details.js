@@ -18,14 +18,14 @@ const Details = () => {
 
         dispatch(callId(addres))
 
-    }, []) //  eslint-disable-line react-hooks/exhaustive-deps
+    }, [])
 
 
 
 
 
 
-
+    let sumar = 1
 
     return dateDetails.length === 0 ? (<Loader />) : (
         <div>    Details
@@ -38,22 +38,22 @@ const Details = () => {
             <h4> {dateDetails[0].area}km2 </h4>
             <h4> {dateDetails[0].population} habitantes </h4>
             <h4>  {dateDetails[0].activities.map(elemento =>
-                <div>
+                <div key={sumar++}>
                     <h2>  {elemento.name}        </h2>
                     <h4>  {elemento.difficulty}      </h4>
                     <h4>  {elemento.duration}      </h4>
                     <h4>  {elemento.season.map(e => {
                         if (e === "Winter") {
-                            return ("" + e + "☃️" + " . ")
+                            return (e + "☃️.")
                         }
                         if (e === "Summer") {
-                            return ("" + e + "☀️" + " . ")
+                            return (e + "☀️.")
                         }
                         if (e === "Pring") {
-                            return ("" + e + "🌺" + " . ")
+                            return (e + "🌺.")
                         }
                         if (e === "Autumn") {
-                            return ("" + e + "🍁" + " . ")
+                            return (e + "🍁.")
                         }
                     }
                     )}      </h4>

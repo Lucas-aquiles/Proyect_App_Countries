@@ -10,7 +10,8 @@ const allCountries = async () => {
     const resultMap = apiUrl.data.map(e => {
         return {
             name: e.name.common,
-            id: e.cca3 ? e.cca3 : e.cioc,
+            id: e.cca3,
+            //  e.cca3 : e.cioc,
             flag_image: e.flags[0],
             continent: e.continents[0],
             capital: e.capital ? e.capital[0] : "no encontrado",

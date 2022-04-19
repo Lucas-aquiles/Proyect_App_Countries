@@ -116,7 +116,7 @@ function rootReducer(state = initialState, action) {
         case "SEARCH_COUNTRY":
 
             const notdat = [{ name: ['No encontrado'], id: "4d4" }]
-
+            console.log(action.payload)
             return {
                 ...state,
                 countries: action.payload.length === 0 ? notdat : action.payload

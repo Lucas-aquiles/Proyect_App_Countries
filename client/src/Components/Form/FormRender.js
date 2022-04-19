@@ -154,34 +154,26 @@ const FormRender = () => {
     let errors = {};
     let regexName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
     let regexDuration = /^[0-5]$/;
-    let formularioValidado = true;
 
     if (!input.name) {
-      formularioValidado = false;
       errors.name = 'Nombre es requerido';
     } else if (!regexName.test(input.name.trim())) {
-      formularioValidado = false;
       errors.name = "solo acepta letras y espacios en blanco";
     }
 
     if (!input.duration) {
-      formularioValidado = false;
       errors.duration = "Duration es requerido"
     } else if (!regexDuration.test(input.duration.trim())) {
-      formularioValidado = false;
       errors.duration = "Duration es requerido , del 0 al 5";
     }
 
     if (input.season.length === 0) {
-      formularioValidado = false;
       errors.season = "Season es requerido"
     }
     if (input.difficulty.length === 0) {
-      formularioValidado = false;
       errors.difficulty = "Difficulty es requerido"
     }
     if (input.country.length === 0) {
-      formularioValidado = false;
       errors.country = "Country es requerido"
     }
 
@@ -195,7 +187,6 @@ const FormRender = () => {
   };
   function validate1(ver) {
     // let regexNameSearch = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-    console.log(ver)
     let errors1 = " "
 
     if (!ver) {
@@ -205,7 +196,6 @@ const FormRender = () => {
     // else if (!regexNameSearch.test(ver)) {
     //   errors1 = "solo acepta letras y espacios en blanco";
     // }
-    console.log(errors1)
     return errors1
   }
 
@@ -229,11 +219,16 @@ const FormRender = () => {
 
       <form onSubmit={e => handleSubmit(e)} >
 
-        <SeasonCheckbox input={input} setInput={e => setInput(e)} inputs={input.season} setError={setError} validate={validate} />
+        <SeasonCheckbox input={input} setInput={e => setInput(e)} inputs={input.season} setError={setError}
+          validate={validate} />
+        {error.season && (<p>{error.season} </p>)}
+
 
         {/* ----------------------------------------------------------------------------- */}
 
         <DifficultRadio cambioDifficult={e => cambioDifficult(e)} inputd={input.difficulty} />
+        {error.difficulty && (<p>{error.difficulty} </p>)}
+
 
         {/* ---------------------------------------------------------- */}
         <label>Nombre:
@@ -244,12 +239,17 @@ const FormRender = () => {
             onChange={e => handleChange(e)}
           />
         </label>
+        {error.name && (<p>{error.name} </p>)}
+
+
         {/* ------------------------------------------------------------- */}
         <label >Duration:
           <input type="number" name="duration" value={input.duration} max={5} min={0}
             onChange={e => handleChange(e)}
 
           /></label>
+        {error.duration && (<p>{error.duration} </p>)}
+
         {/* ---------------------------------------------------------------- */}
         {/* < SearchForm auxinput={auxinput} setAuxinput={setAuxinput} /> */}
 
@@ -264,6 +264,8 @@ const FormRender = () => {
               <button value={e.name} onClick={(e) => addCountries(e)}    >+</button>
             </div>
           )}
+          {error1 && (<p>{error1} </p>)}
+
 
           {input.country && input.country.map(elemento =>
             <div key={sumador++}>

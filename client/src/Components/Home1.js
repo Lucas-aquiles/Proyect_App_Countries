@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -15,6 +15,9 @@ const Home1 = () => {
 
     const dispatch = useDispatch()
 
+    // useEffect(() => {
+
+    // }, [allCountries])
 
 
     const [orden, setOrden] = useState('');
@@ -27,7 +30,7 @@ const Home1 = () => {
 
     const currentCountry = allCountries.slice(indexFirstCountry, indexLastCountry)
     // si estas en pag 1 , entregame 0-9 obj. si estas pag 2 entregame 10-19
-
+    console.log(currentCountry)
 
     function paginado(number) {
         setPagina(number)
@@ -86,7 +89,7 @@ const Home1 = () => {
 
 
 
-
+    let suma = 1
 
     return allCountries.length === 0 ? (<Loader />) : (
 
@@ -107,9 +110,9 @@ const Home1 = () => {
             <div className="container1">
                 <section >
 
-                    {pagina === 1 ? currentCountry.slice(0, 9).map(e => <Card key={e.id} name={e.name}
+                    {pagina === 1 ? currentCountry.slice(0, 9).map(e => <Card key={suma++} name={e.name}
                         img={e.flag_image} id={e.id} continent={e.continent} />) :
-                        currentCountry.map(e => <Card key={e.id} name={e.name} img={e.flag_image} id={e.id} continent={e.continent} />)}
+                        currentCountry.map(e => <Card key={suma++} name={e.name} img={e.flag_image} id={e.id} continent={e.continent} />)}
 
                     {/* {currentCountry.map(e => <Card key={e.id} name={e.name} img={e.flag_image} id={e.id} continent={e.continent} />)} */}
 

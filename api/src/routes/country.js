@@ -18,7 +18,7 @@ server.get('/', async (req, res) => {
             const sendSearch = resultAxios.map(e => {
                 return {
                     name: e.name.common,
-                    id: e.cioc,
+                    id: e.cca3,
                     continent: e.continents[0],
                     flag_image: e.flags[0],
                     population: e.population

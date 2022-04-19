@@ -51,7 +51,6 @@ const SeasonCheckbox = ({ inputs, setInput, input, setError, validate }) => {
                     )
                 })
             }
-
         </>
 
 
