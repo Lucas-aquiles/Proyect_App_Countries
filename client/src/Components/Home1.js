@@ -7,6 +7,7 @@ import Paginado from './Paginado';
 import Card from './Card';
 import './Home1.css'
 import Aside from './Aside';
+import Loader from "./Loader"
 
 const Home1 = () => {
 
@@ -14,9 +15,8 @@ const Home1 = () => {
 
     const dispatch = useDispatch()
 
-    // useEffect(() => {
-    //     dispatch(getCountries())
-    // }, [])
+
+
     const [orden, setOrden] = useState('');
 
     const [pagina, setPagina] = useState(1);
@@ -27,6 +27,7 @@ const Home1 = () => {
 
     const currentCountry = allCountries.slice(indexFirstCountry, indexLastCountry)
     // si estas en pag 1 , entregame 0-9 obj. si estas pag 2 entregame 10-19
+
 
     function paginado(number) {
         setPagina(number)
@@ -87,7 +88,7 @@ const Home1 = () => {
 
 
 
-    return (
+    return allCountries.length === 0 ? (<Loader />) : (
 
 
         <div className='container'>
@@ -105,8 +106,16 @@ const Home1 = () => {
 
             <div className="container1">
                 <section >
-                    {currentCountry.map(e => <Card key={e.id} name={e.name}
-                        img={e.flag_image} id={e.id} continent={e.continent} />)}
+
+                    {pagina === 1 ? currentCountry.slice(0, 9).map(e => <Card key={e.id} name={e.name}
+                        img={e.flag_image} id={e.id} continent={e.continent} />) :
+                        currentCountry.map(e => <Card key={e.id} name={e.name} img={e.flag_image} id={e.id} continent={e.continent} />)}
+
+                    {/* {currentCountry.map(e => <Card key={e.id} name={e.name} img={e.flag_image} id={e.id} continent={e.continent} />)} */}
+
+
+
+
 
                 </section>
                 <aside>

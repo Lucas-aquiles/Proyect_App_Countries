@@ -51,12 +51,12 @@ export default function Paginado({ sizeArray, allCountries, paginado, pagina, se
         pageDecrementBtn = <button onClick={handlePrevbtn}> &hellip; </button>;
     }
 
-    function handleLoadMore() {
-        setSize(sizeArray + 5)
-    }
+    // function handleLoadMore() {
+    //     setSize(sizeArray + 5)
+    // }
 
 
-
+    let maximu = 1
     return (
         <>
             <button onClick={e => handlePrevbtn(e)} disabled={pagina === pageNumber[0] ? true : false}  >Previous</button>
@@ -67,8 +67,8 @@ export default function Paginado({ sizeArray, allCountries, paginado, pagina, se
                 pageNumber.map((number) => {
 
                     if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
-                        return <div className='pageNumbers'>
-                            <button key={number} onClick={() => {
+                        return <div key={maximu++} className='pageNumbers'>
+                            <button onClick={() => {
                                 paginado(number);
                             }} className={pagina === number ? "active" : null}  >
                                 {number}
@@ -85,8 +85,8 @@ export default function Paginado({ sizeArray, allCountries, paginado, pagina, se
             {pageIncrementBtn}
 
             <button onClick={e => handleNextbtn(e)} disabled={pagina === pageNumber[pageNumber.length - 1] ? true : false}     >Next</button>
-            <button className='loadmore' onClick={e => handleLoadMore(e)} >
-                Load More</button>
+            {/* <button className='loadmore' onClick={e => handleLoadMore(e)} >
+                Load More</button> */}
 
         </>)
 

@@ -10,13 +10,12 @@ const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {
 
     const allActivities = useSelector((state) => state.activities)
     const eSearch = useSelector((state) => state.postmsj)
-    console.log(eSearch)
     const dispatch = useDispatch()
 
 
     useEffect(() => {
         dispatch(getActivities())
-    }, [])
+    }, [])//  eslint-disable-line react-hooks/exhaustive-deps
 
     function clearError_search() {
         dispatch(clearError_Create())

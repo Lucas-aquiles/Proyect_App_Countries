@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { callId } from "../action/index"
 import Loader from "./Loader";
@@ -18,7 +18,7 @@ const Details = () => {
 
         dispatch(callId(addres))
 
-    }, [])
+    }, []) //  eslint-disable-line react-hooks/exhaustive-deps
 
 
 
@@ -30,7 +30,7 @@ const Details = () => {
     return dateDetails.length === 0 ? (<Loader />) : (
         <div>    Details
             <h1> {dateDetails[0].name}</h1>
-            <img src={dateDetails[0].flag_image}  ></img>
+            <img src={dateDetails[0].flag_image} alt="" ></img>
             <h4> {addres} </h4>
             <h4> {dateDetails[0].capital} </h4>
             <h4> {dateDetails[0].continent} </h4>
@@ -44,16 +44,16 @@ const Details = () => {
                     <h4>  {elemento.duration}      </h4>
                     <h4>  {elemento.season.map(e => {
                         if (e === "Winter") {
-                            return "" + e + "☃️" + " . "
+                            return ("" + e + "☃️" + " . ")
                         }
                         if (e === "Summer") {
-                            return "" + e + "☀️" + " . "
+                            return ("" + e + "☀️" + " . ")
                         }
                         if (e === "Pring") {
-                            return e + "🌺" + " . "
+                            return ("" + e + "🌺" + " . ")
                         }
                         if (e === "Autumn") {
-                            return e + "🍁" + " . "
+                            return ("" + e + "🍁" + " . ")
                         }
                     }
                     )}      </h4>

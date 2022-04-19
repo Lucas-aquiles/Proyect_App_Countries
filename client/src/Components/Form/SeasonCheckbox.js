@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SeasonCheckbox = ({ inputs, setInput, input }) => {
+const SeasonCheckbox = ({ inputs, setInput, input, setError, validate }) => {
 
     let estaciones = [
         { id: 1, name: ' Winter  ☃️' }, { id: 2, name: ' Summer  ☀️' }, { id: 3, name: ' Pring  🌺' },
@@ -8,6 +8,7 @@ const SeasonCheckbox = ({ inputs, setInput, input }) => {
     ]
 
     // 🍰
+
 
     function onChange(id) {
 
@@ -23,6 +24,8 @@ const SeasonCheckbox = ({ inputs, setInput, input }) => {
             ...input,
             season: selected
         })
+        let objError = validate({ ...input, season: selected });
+        setError(objError);
 
     }
 
