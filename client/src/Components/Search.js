@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { searchCountry } from '../action/index';
-
+import './Search.css'
 
 
 const Search = () => {
@@ -23,12 +23,12 @@ const Search = () => {
 
 
     return (
-        <div>
+        <div className='containerSearch'>
             <form >
-                <label>Click me  <input type="text" onChange={(e) => handleInputChange(e)}
+                <label className='label_form'> <input type="text" onChange={(e) => handleInputChange(e)}
                     value={name} placeholder='Buscar Video Games......' />    </label>
 
-                <button type="submit" onClick={(e) => handleSubmit(e)}   >BUSCAR...</button>
+                <button className='button_form' type="submit" onClick={(e) => handleSubmit(e)}   >Buscar...</button>
 
             </form>
 

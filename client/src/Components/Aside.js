@@ -3,8 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getActivities, clearError_Create } from '../action/index'
 import Search from './Search';
 import ErrorSearch from './ErrorSearch'
-
-
+import './Aside.css'
 
 const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {
 
@@ -17,9 +16,13 @@ const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {
         dispatch(getActivities())
     }, [])//  eslint-disable-line react-hooks/exhaustive-deps
 
-    function clearError_search() {
-        dispatch(clearError_Create())
-    }
+
+    useEffect(() => {
+
+        setTimeout(() => {
+            dispatch(clearError_Create())
+        }, 5000);
+    }, [eSearch])
 
 
 
@@ -27,38 +30,47 @@ const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {
 
     var sumador = 1
     return (
-        <div>
-            <Search />
-            {eSearch === "errorSearch" && <ErrorSearch clearError_search={clearError_search} />}
+        <div className='containerAside'>
+            <div className="search1"  >
+                <Search />
+                {eSearch === "errorSearch" && <ErrorSearch className="errorSearch"
+                //  clearError_search={clearError_search}
+                />}
+            </div>
 
-            <select className='slh' onChange={e => handlefilterAct(e)}>
-                <option value="act"> Activities</option>
+            <div className='select'>
+                <select className='slh' onChange={e => handlefilterAct(e)}>
+                    <option value="act"> Activities</option>
 
-                {allActivities.map((e) => (
-                    <option key={sumador++} value={e.name}> {e.name}</option>
-                ))}
-            </select>
+                    {allActivities.map((e) => (
+                        <option key={sumador++} value={e.name}> {e.name}</option>
+                    ))}
+                </select>
+            </div>
 
+            <div className='select'>
+                <select onChange={e => handlefilterContinent(e)}>
+                    <option value="default" >  Continente</option>
+                    <option value="Antarctica" > Antartida </option>
+                    <option value="South America" > America del Sur </option>
+                    <option value="Asia">  Asia </option>
+                    <option value="Africa" > Africa </option>
+                    <option value="Europe" > Europe </option>
+                    <option value="North America">America del Norte</option>
+                    <option value="Oceania"> Oceania</option>
 
-            <select onChange={e => handlefilterContinent(e)}>
-                <option value="default" >  Continente</option>
-                <option value="Antarctica" > Antartida </option>
-                <option value="South America" > America del Sur </option>
-                <option value="Asia">  Asia </option>
-                <option value="Africa" > Africa </option>
-                <option value="Europe" > Europe </option>
-                <option value="North America">America del Norte</option>
-                <option value="Oceania"> Oceania</option>
+                </select>
+            </div>
 
-            </select>
-
-            <select onChange={e => handleOrderly(e)} >
-                <option value="default"> Ordenar por: </option>
-                <option value="a_z" > A - Z </option>
-                <option value="z_a"> Z - A </option>
-                <option value="mayor_p" > Mayor Poblacion</option>
-                <option value="menor_p" > Menor Poblacion</option>
-            </select>
+            <div className='select'>
+                <select name="format" id="format" onChange={e => handleOrderly(e)} >
+                    <option value="default"> Ordenar por: </option>
+                    <option value="a_z" > A - Z </option>
+                    <option value="z_a"> Z - A </option>
+                    <option value="mayor_p" > Mayor Poblacion</option>
+                    <option value="menor_p" > Menor Poblacion</option>
+                </select>
+            </div>
 
 
 

@@ -96,12 +96,12 @@ const Home1 = () => {
 
         <div className='container'>
             <header>
-                <button className='bth'> <Link to="/create"> Crear Actividades</Link>  </button>
+                <button className='bth'> <Link className='link' to="/create"> Crear Actividades</Link>  </button>
 
             </header>
             {/* --------------------------------------------------- */}
-            <div className="container1">
-                <section >
+            <div className="container1 container  ">
+                <section className="box  car" >
 
                     {pagina === 1 ? currentCountry.slice(0, 9).map(e => <Card key={suma++} name={e.name}
                         img={e.flag_image} id={e.id} continent={e.continent} population={e.population} capital={e.capital} />) :
