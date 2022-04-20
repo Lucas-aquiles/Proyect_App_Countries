@@ -145,8 +145,8 @@ export function callId(payload) {
 
 
 
-// "@fortawesome/fontawesome-svg-core": "^6.1.1",
-//     "@fortawesome/free-brands-svg-icons": "^6.1.1",
-//     "@fortawesome/free-regular-svg-icons": "^6.1.1",
-//     "@fortawesome/free-solid-svg-icons": "^6.1.1",
-//     "@fortawesome/react-fontawesome": "^0.1.18"
+// "@fortawesome/fontawesome-svg-core",
+//     "@fortawesome/free-brands-svg-icons",
+//     "@fortawesome/free-regular-svg-icons"
+//     "@fortawesome/free-solid-svg-icons"
+//     "@fortawesome/react-fontawesome"

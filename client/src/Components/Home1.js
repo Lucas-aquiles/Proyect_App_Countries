@@ -96,30 +96,18 @@ const Home1 = () => {
 
         <div className='container'>
             <header>
-
                 <button className='bth'> <Link to="/create"> Crear Actividades</Link>  </button>
 
             </header>
-
-            < div className='paginado' >
-                <Paginado sizeArray={sizeArray}
-                    allCountries={allCountries.length}
-                    paginado={paginado} pagina={pagina} setPagina={setPagina} setSize={setSize}
-                />  </div>
-
+            {/* --------------------------------------------------- */}
             <div className="container1">
                 <section >
 
                     {pagina === 1 ? currentCountry.slice(0, 9).map(e => <Card key={suma++} name={e.name}
-                        img={e.flag_image} id={e.id} continent={e.continent} />) :
-                        currentCountry.map(e => <Card key={suma++} name={e.name} img={e.flag_image} id={e.id} continent={e.continent} />)}
+                        img={e.flag_image} id={e.id} continent={e.continent} population={e.population} capital={e.capital} />) :
+                        currentCountry.map(e => <Card key={suma++} name={e.name} img={e.flag_image} id={e.id} capital={e.capital} continent={e.continent} population={e.population} />)}
 
                     {/* {currentCountry.map(e => <Card key={e.id} name={e.name} img={e.flag_image} id={e.id} continent={e.continent} />)} */}
-
-
-
-
-
                 </section>
                 <aside>
                     <Aside handlefilterAct={handlefilterAct} handlefilterContinent={handlefilterContinent}
@@ -127,13 +115,13 @@ const Home1 = () => {
                 </aside>
 
             </div>
-
-
-
-
-
-
-
+            {/* --------------------------------------------------- */}
+            < div className='paginado' >
+                <Paginado sizeArray={sizeArray}
+                    allCountries={allCountries.length}
+                    paginado={paginado} pagina={pagina}
+                    setPagina={setPagina} setSize={setSize} />
+            </div>
 
         </div>
 

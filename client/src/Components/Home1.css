@@ -1,17 +1,22 @@
-.container
-{
-    width: 100%;
-    height: 100vh;
+.container{
+    
+background-image: url("../Images/drawing.jpg");
+
+max-width: 100%;
+  height: auto;
 
 }
 
 header{
     height: 20%;
+    border-bottom:solid;
+    border-color: antiquewhite;
 }
 .paginado{
     height: 20%;
     border:solid;
-    background: red;
+    border-color: antiquewhite;
+    
 }
 .container1{
     
@@ -32,8 +37,8 @@ section{
 
 }
 aside{
-    border:solid;
-    background-color: aqua;
+    border-left:solid wheat;
+    background: transparent;
     width: 20%;
     /* display: none; */
     

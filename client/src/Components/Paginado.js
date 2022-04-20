@@ -58,7 +58,7 @@ export default function Paginado({ sizeArray, allCountries, paginado, pagina, se
 
     let maximu = 1
     return (
-        <>
+        <div className='containerPag'>
             <button onClick={e => handlePrevbtn(e)} disabled={pagina === pageNumber[0] ? true : false}  >Previous</button>
             {pageDecrementBtn}
 
@@ -88,7 +88,7 @@ export default function Paginado({ sizeArray, allCountries, paginado, pagina, se
             {/* <button className='loadmore' onClick={e => handleLoadMore(e)} >
                 Load More</button> */}
 
-        </>)
+        </div>)
 
 
 
