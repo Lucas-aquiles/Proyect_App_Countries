@@ -1,5 +1,27 @@
 .error{
     width: 100%;
-    height: 100px;
-    background: rgb(192, 20, 20);
-}
+    height: 200px;
+    background: #dc3545;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 5rem;
+    position: relative;
+    }
+    .error >h1{
+        font-size: 1.9rem;
+      font-family: 'Poppins',sans-serif;
+      font-weight: 600;
+      color:white;
+    }
+    
+    .error >button{
+        font-size: 1.9rem;
+      font-family: 'Poppins',sans-serif;
+      font-weight: 600;
+      color:white;
+      background: #e04f5d;
+    }
+    .error >button:hover{
+        background: #dc3545;
+    }

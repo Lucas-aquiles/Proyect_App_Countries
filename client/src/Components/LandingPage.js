@@ -23,7 +23,7 @@ const LandingPage = () => {
         setTimeout(() => {
             setInit(true)
         }, 2000);
-    }, [])
+    }, [])//  eslint-disable-line react-hooks/exhaustive-deps
 
 
     return init === false ? (<Loader />) :

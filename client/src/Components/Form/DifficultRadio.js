@@ -1,4 +1,5 @@
 import React from 'react'
+import './DifficultRadio.css'
 
 const DifficultRadio = ({ cambioDifficult, inputd }) => {
 
@@ -9,11 +10,11 @@ const DifficultRadio = ({ cambioDifficult, inputd }) => {
 
     return (
         <div>
-            <p>{inputd[0]}</p>
-
+            {/* <p>{inputd[0]}</p> */}
+            <h2 className='radio_h2'>Difficulty :</h2>
             {array.map(e =>
-                <label key={e.id} >
-                    <input
+                <label className='container_label' key={e.id} >
+                    <input className='radio'
                         id={e.id}
                         type="radio"
                         value={e.name}

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -30,7 +30,6 @@ const Home1 = () => {
 
     const currentCountry = allCountries.slice(indexFirstCountry, indexLastCountry)
     // si estas en pag 1 , entregame 0-9 obj. si estas pag 2 entregame 10-19
-    console.log(currentCountry)
 
     function paginado(number) {
         setPagina(number)

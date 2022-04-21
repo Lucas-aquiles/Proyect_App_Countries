@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './SeasonCheckbox.css'
 const SeasonCheckbox = ({ inputs, setInput, input, setError, validate }) => {
 
     let estaciones = [
@@ -32,15 +32,15 @@ const SeasonCheckbox = ({ inputs, setInput, input, setError, validate }) => {
     return (
         <>
 
-            <p>
+            {/* <p>
                 {inputs.map(e => { return e.name })}
-            </p>
-            <p>Season : </p>
+            </p> */}
+            <h1 className='hcheck'>Season : </h1>
             {
                 estaciones.map(item => {
                     return (
-                        <label key={item.id}>
-                            <input type="checkbox"
+                        <label className="category-item" key={item.id}>
+                            <input type="checkbox" className="checkbox"
                                 onChange={() => onChange(item.id)}
                                 // selected={inputs.includes(item.id)}
                                 checked={inputs.find(e => e.id === item.id) ? true : false}

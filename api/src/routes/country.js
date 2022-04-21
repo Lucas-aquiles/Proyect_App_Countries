@@ -21,7 +21,8 @@ server.get('/', async (req, res) => {
                     id: e.cca3,
                     continent: e.continents[0],
                     flag_image: e.flags[0],
-                    population: e.population
+                    population: e.population,
+                    capital: e.capital ? e.capital : "no encontrado",
                 }
             }
             )

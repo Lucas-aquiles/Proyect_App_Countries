@@ -1,0 +1,38 @@
+.container_label{
+display: flex;
+flex-direction: row;
+background:salmon;
+margin-top:0.2rem;  
+
+}
+.radio_h2{
+    color: rgb(102, 98, 98);
+    font-size: 1.2rem;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+
+}
+.radio{
+    width: 2rem;
+    height: 2rem;
+    color: aliceblue;
+    background:rgb(114, 250, 155);
+    margin: 0.2rem;
+}
+.radio:hover{
+    color:red
+}
+
+.container_label >span{
+    width: 100%;
+    font-size: 1.1rem;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 600;
+    color: aliceblue;
+    background: salmon;
+    padding-top: 0rem;
+
+}
+.container_label>input{
+    height: 1rem;}

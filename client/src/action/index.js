@@ -137,7 +137,13 @@ export function callId(payload) {
     };
 }
 
+export function clearDetails() {
 
+    return {
+        type: "CLEAR_DETAILS",
+        payload: []
+    }
+}
 
 
 

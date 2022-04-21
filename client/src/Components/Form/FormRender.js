@@ -8,6 +8,9 @@ import './FormRender.css'
 import Error from './Error'
 import Creado from './Creado'
 
+
+
+
 const FormRender = () => {
   const dispacth = useDispatch()
   const msjPost = useSelector((state) => state.postmsj)
@@ -32,6 +35,7 @@ const FormRender = () => {
     country: []
 
   })
+  console.log(input.country)
   useEffect(() => {
     setTimeout(() => {
       setSearchAux(false)
@@ -207,68 +211,71 @@ const FormRender = () => {
 
   return (
 
-    <div>
+    <div className='father_form'>
 
       {msjPost.data === "ERROR" && <Error clearError_creado={clearError_creado} />
       }
       {msjPost.data === "Creado" && <Creado clearError_creado={clearError_creado} />}
 
+      <form className='container_Formulario' onSubmit={e => handleSubmit(e)} >
+        <div className='item_containerFormulario' >
+          <label>Nombre :
+            <input className='inputformulario' type="text"
+              name="name"
+              placeholder="Nombre"
+              value={input.name}
+              onChange={e => handleChange(e)}
+            />
+          </label>
+          {error.name && (<p className='error_p'>{error.name} </p>)}
 
 
+          {/* ------------------------------------------------------------- */}
+          <label >Duration , h. :
+            <input className='inputformulario' type="number" name="duration" value={input.duration} max={5} min={0}
+              onChange={e => handleChange(e)}
+
+            /></label>
+          {error.duration && (<p className='error_p'>{error.duration} </p>)}
+
+          {/* ---------------------------------------------------------------- */}
+          {/* < SearchForm auxinput={auxinput} setAuxinput={setAuxinput} /> */}
+
+          <SeasonCheckbox input={input} setInput={e => setInput(e)} inputs={input.season} setError={setError}
+            validate={validate} />
+          {error.season && (<p className='error_p'>{error.season} </p>)}
 
 
-      <form onSubmit={e => handleSubmit(e)} >
+          {/* ----------------------------------------------------------------------------- */}
 
-        <SeasonCheckbox input={input} setInput={e => setInput(e)} inputs={input.season} setError={setError}
-          validate={validate} />
-        {error.season && (<p>{error.season} </p>)}
-
-
-        {/* ----------------------------------------------------------------------------- */}
-
-        <DifficultRadio cambioDifficult={e => cambioDifficult(e)} inputd={input.difficulty} />
-        {error.difficulty && (<p>{error.difficulty} </p>)}
+          <DifficultRadio cambioDifficult={e => cambioDifficult(e)} inputd={input.difficulty} />
+          {error.difficulty && (<p className='error_p'>{error.difficulty} </p>)}
 
 
-        {/* ---------------------------------------------------------- */}
-        <label>Nombre:
-          <input type="text"
-            name="name"
-            placeholder="Nombre"
-            value={input.name}
-            onChange={e => handleChange(e)}
-          />
-        </label>
-        {error.name && (<p>{error.name} </p>)}
+          {/* ---------------------------------------------------------- */}
 
+        </div>
 
-        {/* ------------------------------------------------------------- */}
-        <label >Duration:
-          <input type="number" name="duration" value={input.duration} max={5} min={0}
-            onChange={e => handleChange(e)}
-
-          /></label>
-        {error.duration && (<p>{error.duration} </p>)}
-
-        {/* ---------------------------------------------------------------- */}
-        {/* < SearchForm auxinput={auxinput} setAuxinput={setAuxinput} /> */}
-
-        <div>
-          <input type="text" name='name' value={ver} onChange={inputSearch} />
-          <button onClick={sendDis}>O</button>
-
-          {dataSearch.length === 0 && serchAux ? "No encontrado" : dataSearch.map(e =>
+        <div className='item_containerFormulario1'>
+          <div className='padratro'>
+            <input type="text" name='name' value={ver} onChange={inputSearch} placeholder="Country Search" />
+            <button className='buton_padrastro' onClick={sendDis}>Search</button>
+          </div>
+          {console.log(dataSearch)}
+          {dataSearch.length === 0 && serchAux ? <p className='error_p'> "No encontrado"  </p> : dataSearch.map(e =>
             <div key={e.id} className='searchfilter'>
-              <h5  >  {e.name} </h5>
-              <img className='imgForm' src={e.flag_image} alt="" />
-              <button value={e.name} onClick={(e) => addCountries(e)}    >+</button>
+              <div className='searchFF'> <img className='imgForm' src={e.flag_image} alt="" /></div>
+              <div className='searchFF' > <h5  >  {e.name} </h5> </div>
+              <div className='searchFF'   >      <button value={e.name} onClick={(e) => addCountries(e)}    > +</button>  </div>
+
+
             </div>
           )}
-          {error1 && (<p>{error1} </p>)}
+          {error1 && (<p className='error_p'>{error1} </p>)}
 
 
           {input.country && input.country.map(elemento =>
-            <div key={sumador++}>
+            <div className='addCountry' key={sumador++}>
               <p>  {elemento} </p>
               <button name="country" value={elemento} onClick={e => deleteEve(e)}  >x</button>
 
@@ -278,9 +285,9 @@ const FormRender = () => {
           }
 
 
+          <button className='form_sumit' type='submit'>  Crear Actividades </button>
         </div>
 
-        <button type='submit'>  Crear Actividades </button>
       </form>
 
 

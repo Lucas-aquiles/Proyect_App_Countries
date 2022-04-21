@@ -3,7 +3,6 @@
 
 .container{
 background-image: url("../Images/drawing.jpg");
-
   height: max-content;
   width: 100%;
 
@@ -16,7 +15,7 @@ header{
     text-decoration: none;
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: flex-end;
     /* chequer el end */
 }
 .bth{

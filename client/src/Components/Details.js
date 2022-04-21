@@ -1,13 +1,12 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
-import { callId } from "../action/index"
+import { callId, clearDetails } from "../action/index"
 import Loader from "./Loader";
 import './Details.css'
 import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
 
@@ -25,8 +24,11 @@ const Details = () => {
     useEffect(() => {
 
         dispatch(callId(addres))
+        return () => {
+            dispatch(clearDetails())
+        }
+    }, [])//  eslint-disable-line react-hooks/exhaustive-deps
 
-    }, [])
 
 
 

@@ -7,7 +7,7 @@ import './Error.css'
 const Error = ({ clearError_creado }) => {
     return (
         <div className='error' >
-            <h1>Errorrr    </h1>
+            <h1>Error , repeat name    </h1>
             <button onClick={e => clearError_creado(e)}>    X   </button>
 
 

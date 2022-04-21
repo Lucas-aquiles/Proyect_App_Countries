@@ -22,7 +22,7 @@ const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {
         setTimeout(() => {
             dispatch(clearError_Create())
         }, 5000);
-    }, [eSearch])
+    }, [eSearch])//  eslint-disable-line react-hooks/exhaustive-deps
 
 
 

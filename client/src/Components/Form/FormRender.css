@@ -1,16 +1,27 @@
+.father_form{
+  height: 100%;
+}
+.container_Formulario{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  height: 100%;
+  width: 84.3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background: salmon;
+}
 
-.formu{
-    border: solid;
-    display: flex;
-    flex-direction: column;
-    width: 30rem; 
+.inputformulario{
+  width: 98%;
+  height: 2rem;
+  font-family: 'Poppins',sans-serif;
 
 }
+
 .seasonInputs{  
 border:solid
 }
-
-
 
 .checkbox{
     cursor: pointer;
@@ -20,22 +31,138 @@ border:solid
     border-radius: 20px;
   
 }
-
-/* 
-  .searchfilter{
-    width: 2rem;
-    height: 2rem;
-  } */
-
   .imgForm{
     width: 3rem;
     height: 2rem;
     border-radius: 11% 89% 9% 91% / 85% 13% 87% 15% 
     ;
     object-fit: fill;
-
-
-    ;
-  
-
   }
+  
+ .item_containerFormulario{
+   width: 25rem;
+border: solid white;
+border-radius: 1rem;
+position: relative;
+background: rgb(255, 255, 255,0.2);
+
+ }
+ .item_containerFormulario >label{
+   color: white;
+   font-size: 1.1rem;
+   font-family: 'Poppins',sans-serif;
+   font-weight: 600;
+   margin-left: 0.5rem;
+   margin-bottom: 0.1rem;
+ }
+ .item_containerFormulario1{
+  border: solid white;
+  position: relative;
+  width: 25rem;
+  /* left: 3rem; */
+  border-radius: 1rem ;
+ }
+ .error_p{
+   padding-left: 1rem;
+color:white;
+background-color: #dc3545 ;
+/* color: rgb(102, 98, 98); */
+font-size: 1.1rem;
+font-family: 'Poppins',sans-serif;
+font-weight: 600;
+ }
+.padratro{
+  margin-top: 1.4rem;
+  display: flex;
+  flex-direction: column;
+}
+.padratro >input{
+  height: 2rem;
+
+}
+.buton_padrastro{
+  border-radius: 5px 5px 5px 5px ;
+  color: rgb(252, 248, 248);
+  width: 95%;
+  font-size: 1.1rem;
+font-family: 'Poppins',sans-serif;
+font-weight: 600;
+  
+}
+.buton_padrastro:hover{
+  background: gray;
+}
+.searchfilter{
+ height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 600;
+  color:white;
+  background: rgb(252, 248, 248,0.2);
+  margin-bottom: 0.2rem;
+}
+.searchFF{
+  position: relative;
+  padding: 1rem;
+}
+.searchFF>button{
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.3rem;
+}
+.searchFF>button:hover{
+  background: #198754;
+  border-color: #198754;
+}
+.addCountry{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2rem;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 600;
+  color:white;
+  background: rgb(252, 248, 248,0.2);
+  margin-bottom: 0.2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background: #198754;
+  height: 4rem;
+
+}
+
+.addCountry >button{
+  background: rgb(252, 248, 248, 0.4);
+  font-size: 1.2rem;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 600;
+  color:white;
+  width: 2rem;
+  height: 2rem;
+
+}
+.addCountry >button:hover{
+  background-color: #dc3545;
+}
+
+.form_sumit{
+align-self: center;
+  border-radius: 2px 2px 2px 2px;
+  width: 15rem;
+  margin-left: 5rem;
+  margin-top: 2rem;
+  font-family: 'Poppins',sans-serif;
+  font-weight: 600;
+  color:white;
+  font-size: 1.4rem;
+
+
+}
+.form_sumit:hover{
+  background-color: #198754;
+}

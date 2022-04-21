@@ -4,7 +4,6 @@ import './Card.css'
 
 export default function Card({ name, img, id, continent, population, capital }) {
 
-    console.log(population, capital, name)
 
     return (
 
