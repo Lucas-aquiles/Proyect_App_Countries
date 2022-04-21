@@ -2,7 +2,7 @@
 
 .container_card{
         width: 19rem;
-        border: 2px solid  rgb(240, 226, 195);;
+        border: 2px solid  rgb(127, 0, 255,0.6);;
         border-width: 0.2rem;
          border-radius: 10px;
          height: 16rem;
@@ -54,62 +54,59 @@ transition: all 500ms;
 
 .container_Card1 >h1{
     font-family: 'Poppins', sans-serif; 
-    margin-top: 1rem;
+    margin-top: 0.5rem;
 
 }
 .container_Card2{
     display: flex;
     flex-direction: column;
-    align-items: center;
-justify-content:flex-start;
+    align-items:center;
+justify-content: center;
 height: auto;
-margin-top:-2rem;
+margin-bottom: 1.4rem;
 }
-.container_Card2 > h4{
-    margin: 0.5rem;
-    margin-top: 0;
+.card_item_individual{
+
+    margin-left: 1rem;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
 }
-.linkh4{
+
+
+
+
+.h4Card{
+    height: 2rem;
+    width: 5rem;
+    background:  rgb(251, 148, 63);
     text-decoration: none;
     cursor: pointer;
-    height: 3rem;
-    width: 5rem;
+   
     text-align: center;
-    margin-bottom: 0.5rem;
     border-radius: 2rem;
     border-color: white;
-    background: rgba(255, 252, 250, 0.4);
+   
+    font-size: 1.1rem;
+    font-family: 'Poppins',sans-serif;
+    color: white;
+font-weight: 400;
 
+    
 }
-.linkh4 >h4{
-    top: 1rem;
-    color:rgb(107, 107, 107);
-    margin-top: 0.7rem;
-}
-
-.linkh4 >h4:hover, .linkh4 >h4:focus {
+.h4Card:hover {
     color:white;
     transition: all .2s ease-in-out .1s;
 
 
-}
+} 
 
-
-
-
-.linkh4:hover, .linkh4:focus {
-    background: #ff7f50;
+.h4Card:hover {
+    background:rgb(127, 0, 255,0.6);
     transform: translateY(-6px);
     transition: all .3s ease-in-out .1s;
 
-  }
+  } 
 
-  .container_Card2 > div{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 80%;
-      margin-bottom: -1rem;
-      margin-top:-1rem ;
-     
-  }

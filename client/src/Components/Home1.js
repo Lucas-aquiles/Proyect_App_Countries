@@ -99,7 +99,7 @@ const Home1 = () => {
 
             </header>
             {/* --------------------------------------------------- */}
-            <div className="container1 container  ">
+            <div className="container1   ">
                 <section className="box  car" >
 
                     {pagina === 1 ? currentCountry.slice(0, 9).map(e => <Card key={suma++} name={e.name}

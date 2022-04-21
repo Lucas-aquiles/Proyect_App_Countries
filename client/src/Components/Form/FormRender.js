@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react'
 import DifficultRadio from './DifficultRadio'
 import SeasonCheckbox from './SeasonCheckbox'
 // import SearchForm from './searchForm'
+import { Link } from 'react-router-dom';
+
 import { useSelector, useDispatch } from 'react-redux'
 import { searchFilter, postActivities, clearActivities, clearError_Create } from '../../action/index'
 import './FormRender.css'
 import Error from './Error'
 import Creado from './Creado'
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
 
 
 
@@ -290,7 +293,9 @@ const FormRender = () => {
 
       </form>
 
-
+      <div className="icon">
+        <Link to="/home" >
+          <FontAwesomeIcon className="iconFont" icon={faAngleLeft} />  </Link>          </div>
 
     </div>
   )

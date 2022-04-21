@@ -1,6 +1,5 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 import { useState, useEffect } from 'react';
