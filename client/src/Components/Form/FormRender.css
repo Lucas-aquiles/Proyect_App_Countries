@@ -4,12 +4,16 @@
 .container_Formulario{
   padding-top: 2rem;
   padding-bottom: 2rem;
+  background: rgb(197, 197, 84);
   height: 100%;
   width: 84.3rem;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  background: rgb(127, 0, 255,0.6);
+  background-image: url("../../Images/composition-toy.jpg");
+  background-repeat : no-repeat;
+  background-size : cover;
+   /* rgb(127, 0, 255,0.6); */
 }
 
 .inputformulario{

@@ -11,13 +11,14 @@ server.post('/', async (req, res) => {
 
     let { name, difficulty, duration, season, country } = req.body
     console.log(name, difficulty, duration, season, country)
-
+    let nameMin = name.trim().toLocaleLowerCase()
     let difficultyChange = difficulty[1].trim()
     let seasonChange = season.map(e => e.name.trim().slice(0, 6).trim())
+    console.log(seasonChange)
 
 
     try {
-        await validarActivity(name, country);
+        await validarActivity(nameMin, country);
     } catch (err) {
         return res.status(200).send("ERROR")
     }
@@ -27,11 +28,12 @@ server.post('/', async (req, res) => {
     try {
 
         const createActivity = await Activity.create({
-            name: name,
+            name: nameMin,
             difficulty: difficultyChange,
             duration: duration,
             season: seasonChange,
         })
+
 
         let countryBd = await Country.findAll({
             where: {
@@ -54,7 +56,7 @@ server.get('/', async (req, res) => {
     const saveActivity = await Activity.findAll({
         include: { model: Country }
     })
-
+    console.log(saveActivity)
     res.status(200).json(saveActivity)
 })
 

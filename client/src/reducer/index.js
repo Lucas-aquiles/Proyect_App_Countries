@@ -182,6 +182,12 @@ function rootReducer(state = initialState, action) {
                 details: action.payload
             }
 
+        case "CLEAR_COUNTRIES":
+            return {
+                ...state,
+                countries: action.payload,
+                countriesAux: action.payload
+            }
 
 
         default:

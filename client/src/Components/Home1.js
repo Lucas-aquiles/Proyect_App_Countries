@@ -1,8 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-
-import { getCountries, filter_Activities, filter_Continent, orderlyByName, orderlyByPoblation, getCountriesFront } from '../action/index'
+import { getCountries, filter_Activities, filter_Continent, orderlyByName, orderlyByPoblation, getCountriesFront, clearStateCountries } from '../action/index'
 import Paginado from './Paginado';
 import Card from './Card';
 import './Home1.css'
@@ -12,12 +11,14 @@ import Loader from "./Loader"
 const Home1 = () => {
 
     const allCountries = useSelector((state) => state.countries)
+    console.log(allCountries)
 
     const dispatch = useDispatch()
 
-    // useEffect(() => {
-
-    // }, [allCountries])
+    useEffect(() => {
+        // dispatch(clearStateCountries())
+        dispatch(getCountries())
+    }, [])
 
 
     const [orden, setOrden] = useState('');
@@ -39,6 +40,7 @@ const Home1 = () => {
         console.log(e.target.value)
         if (e.target.value === "act") {
             dispatch(getCountries())
+            setPagina("1")
         } else {
             e.preventDefault();
             dispatch(filter_Activities(e.target.value));
@@ -50,7 +52,6 @@ const Home1 = () => {
     function handlefilterContinent(e) {
         if (e.target.value === "default") {
             dispatch(getCountriesFront())
-
             setPagina("1")
         }
 
@@ -65,7 +66,8 @@ const Home1 = () => {
 
     function handleOrderly(e) {
         if (e.target.value === "default") {
-            dispatch(getCountriesFront())
+            dispatch(getCountriesFront());
+            setPagina("1")
 
         }
         if (e.target.value === "a_z" || e.target.value === "z_a") {

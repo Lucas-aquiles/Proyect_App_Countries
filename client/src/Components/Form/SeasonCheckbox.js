@@ -3,7 +3,7 @@ import './SeasonCheckbox.css'
 const SeasonCheckbox = ({ inputs, setInput, input, setError, validate }) => {
 
     let estaciones = [
-        { id: 1, name: ' Winter  ☃️' }, { id: 2, name: ' Summer  ☀️' }, { id: 3, name: ' Pring  🌺' },
+        { id: 1, name: ' Winter  ☃️' }, { id: 2, name: ' Summer  ☀️' }, { id: 3, name: ' Spring  🌺' },
         { id: 4, name: ' Autumn  🍁' },
     ]
 

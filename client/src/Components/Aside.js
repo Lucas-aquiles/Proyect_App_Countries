@@ -8,6 +8,10 @@ import './Aside.css'
 const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {
 
     const allActivities = useSelector((state) => state.activities)
+    console.log(allActivities)
+
+
+
     const eSearch = useSelector((state) => state.postmsj)
     const dispatch = useDispatch()
 
@@ -17,17 +21,18 @@ const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {
     }, [])//  eslint-disable-line react-hooks/exhaustive-deps
 
 
-    useEffect(() => {
 
+    if (eSearch === "errorSearch") {
         setTimeout(() => {
             dispatch(clearError_Create())
-        }, 5000);
-    }, [eSearch])//  eslint-disable-line react-hooks/exhaustive-deps
-
-
-
-
-
+        }, 3000);
+    }
+    // -------------------------------------------------------------
+    let arrayAllActivities = allActivities.map(e => e.name)
+    const dataArr = new Set(arrayAllActivities);
+    let result = [...dataArr];
+    console.log(result)
+    // --------------------------------------------------------
     var sumador = 1
     return (
         <div className='containerAside'>
@@ -42,8 +47,8 @@ const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {
                 <select className='slh' onChange={e => handlefilterAct(e)}>
                     <option value="act"> Activities</option>
 
-                    {allActivities.map((e) => (
-                        <option key={sumador++} value={e.name}> {e.name}</option>
+                    {result.map((e) => (
+                        <option key={sumador++} value={e}> {e}</option>
                     ))}
                 </select>
             </div>

@@ -11,7 +11,7 @@ import Error from './Error'
 import Creado from './Creado'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
-
+import Loader from '../Loader';
 
 
 const FormRender = () => {
@@ -29,6 +29,7 @@ const FormRender = () => {
   let [error1, setError1] = useState('');
   // console.log(error)
   console.log(error1)
+  const [init, setInit] = useState(false)
 
   const [input, setInput] = useState({
     name: "",
@@ -43,7 +44,18 @@ const FormRender = () => {
     setTimeout(() => {
       setSearchAux(false)
     }, 2000);
+
+
   }, [serchAux])
+
+  useEffect(() => {
+
+    setTimeout(() => {
+      setInit(true)
+    }, 2000);
+
+  }, [])
+
 
   useEffect(() => {
   }, [input.season])
@@ -211,8 +223,8 @@ const FormRender = () => {
 
   // --------------------
   let sumador = 1
+  return init === false ? (<Loader />) : (
 
-  return (
 
     <div className='father_form'>
 

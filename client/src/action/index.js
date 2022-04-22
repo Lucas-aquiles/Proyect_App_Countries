@@ -144,7 +144,12 @@ export function clearDetails() {
         payload: []
     }
 }
-
+export function clearStateCountries() {
+    return {
+        type: "CLEAR_COUNTRIES",
+        payload: []
+    }
+}
 
 
 

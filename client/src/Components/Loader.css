@@ -1,0 +1,66 @@
+.lds-ellipsis{
+    background: radial-gradient(circle, rgb(63, 238, 251) 6%, rgb(61, 209, 229) 24%, rgb(63, 197, 250) 81%, rgba(63,195,250) 83%, rgba(89, 150, 155, 0.874) 100%);
+    width: 85.2rem;
+height: 100vh;
+}
+.lds-ellipsis div >img {
+    background-size : contain; 
+    width: 6.5rem;
+    height: auto;
+
+}
+
+  .lds-ellipsis div {
+      text-align: center;
+      padding-top:1rem ;
+    position: absolute;
+    top: 18rem;
+    margin-left: 21rem;
+    width: 7rem;
+    height: 7rem;
+    border: solid rgb(255, 255, 255,0.5);
+    border-radius: 50%;
+    background: rgb(255, 255, 255,0.9);
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    /* especifica cómo una animación CSS debe avanzar sobre la duración de cada ciclo */
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 72px;
+    animation: lds-ellipsis1 0.9s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 166px;
+    animation: lds-ellipsis2 0.9s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 330px;
+    animation: lds-ellipsis2 0.9s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 504px;
+    animation: lds-ellipsis3 0.9s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(50px, 0);
+    }
+  }

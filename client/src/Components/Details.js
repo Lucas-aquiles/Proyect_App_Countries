@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { callId, clearDetails } from "../action/index"
 import Loader from "./Loader";
 import './Details.css'
@@ -19,11 +19,18 @@ const Details = () => {
     console.log(addres)
     const dateDetails = useSelector((state) => state.details)
     console.log(dateDetails)
+    const [init, setInit] = useState(false)
 
-    console.log(dateDetails)
+
+
     useEffect(() => {
 
         dispatch(callId(addres))
+        setTimeout(() => {
+            setInit(true)
+        }, 2000);
+
+
         return () => {
             dispatch(clearDetails())
         }
@@ -31,13 +38,15 @@ const Details = () => {
 
 
 
+    function handleClick() {
 
+    }
 
 
 
     let sumar = 1
 
-    return dateDetails.length === 0 ? (<Loader />) : (
+    return init === false ? (<Loader />) : (
         <div className="containerDetails">
 
             <div className="item_1Details">
@@ -55,16 +64,25 @@ const Details = () => {
                 </div>
             </div>
             <div className="item_2Details">
-                <div className="icon">
+                <div className="icon" onClick={e => handleClick(e)}  >
                     <Link to="/home" >
                         <FontAwesomeIcon className="iconFont" icon={faAngleLeft} />  </Link>          </div>
                 <div className="father">
 
-                    {dateDetails[0].activities.length === 1 ? (<h1>Activities</h1>) : null}
+                    {dateDetails[0].activities.length >= 1 ? (<h1>Activities:</h1>) : null}
                     {dateDetails[0].activities.map(elemento =>
                         <div className="boy" key={sumar++}>
                             <h4>  Activity : {elemento.name}        </h4>
-                            <h4> Difficulty :  {elemento.difficulty}      </h4>
+                            <h4> Difficulty :  {elemento.difficulty === 1 ? "Very Difficult" : null}
+                                {elemento.difficulty === 2 ? " Hard" : null}
+                                {elemento.difficulty === 3 ? "Middle" : null}
+                                {elemento.difficulty === 4 ? "Normal" : null}
+                                {elemento.difficulty === 5 ? " Easy" : null}
+
+                            </h4>
+
+
+
                             <h4> Duration :  {elemento.duration} hs     </h4>
                             <h4>  Season : {elemento.season.map(e => {
                                 if (e === "Winter") {
@@ -73,7 +91,7 @@ const Details = () => {
                                 if (e === "Summer") {
                                     return (e + "☀️.")
                                 }
-                                if (e === "Pring") {
+                                if (e === "Spring") {
                                     return (e + "🌺.")
                                 }
                                 if (e === "Autumn") {
