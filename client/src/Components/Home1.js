@@ -44,7 +44,7 @@ const Home1 = () => {
         // console.log(e.target.value)
         if (e.target.value === "act") {
             dispatch(getCountries())
-            setPagina("1")
+            setPagina(1)
         } else {
             e.preventDefault();
             dispatch(filter_Activities(e.target.value));
@@ -56,13 +56,13 @@ const Home1 = () => {
     function handlefilterContinent(e) {
         if (e.target.value === "default") {
             dispatch(getCountriesFront())
-            setPagina("1")
+            setPagina(1)
         }
 
         else {
             e.preventDefault();
             dispatch(filter_Continent(e.target.value))
-            setPagina("1")
+            setPagina(1)
 
         }
 
@@ -71,12 +71,12 @@ const Home1 = () => {
     function handleOrderly(e) {
         if (e.target.value === "default") {
             dispatch(getCountriesFront());
-            setPagina("1")
+            setPagina(1)
 
         }
         if (e.target.value === "a_z" || e.target.value === "z_a") {
             dispatch(orderlyByName(e.target.value));
-            setPagina("1")
+            setPagina(1)
             setOrden(`Ordenado ${e.target.value}`)
             e.preventDefault();
 
@@ -91,7 +91,7 @@ const Home1 = () => {
 
     function handleRecarga() {
         dispatch(getCountries())
-        setPagina("1")
+        setPagina(1)
 
     }
 

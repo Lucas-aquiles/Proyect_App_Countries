@@ -41,6 +41,27 @@ const Details = () => {
     function handleClick() {
 
     }
+    function convertirNumero(parametro) {
+        var poblacion = String(parametro)
+        console.log(typeof (poblacion))
+        var array = [];
+        let poblacionRevers = poblacion.split("").reverse()
+        for (var i = 0; poblacionRevers.length >= i; i += 3) {
+            array.push(poblacionRevers.slice(i, i + 3).concat("."))
+        };
+        var cstr = array.join('')
+        var strConvertido = cstr.replaceAll(",", "")
+        var numeroCasi = (strConvertido.split("").reverse().join(""))
+        console.log(numeroCasi)
+
+        if (numeroCasi[1] === ".") {
+            return (numeroCasi.slice(2, numeroCasi.length))
+        }
+        if (numeroCasi[0] === ".") {
+            return (numeroCasi.slice(1, numeroCasi.length))
+        }
+
+    }
 
 
 
@@ -59,8 +80,9 @@ const Details = () => {
                     <h4> Codigo:  {addres} </h4>
                     <h4>Capital: {dateDetails[0].capital} </h4>
                     <h4>Continent: {dateDetails[0].continent} </h4>
-                    <h4>Area: {dateDetails[0].area} km2 </h4>
-                    <h4>Population: {dateDetails[0].population} habitantes </h4>
+                    <h4>Area: {convertirNumero(dateDetails[0].area)} km2 </h4>
+                    <h4>Population: {convertirNumero(dateDetails[0].population)} habitantes </h4>
+
                 </div>
             </div>
             <div className="item_2Details">

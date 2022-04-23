@@ -16,6 +16,8 @@ background-position: 39rem;
     width: 35%;
     height: 100vh;
     clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+    height: 100%;
+    background-size: cover;
 
 }
 .parte2{
@@ -32,6 +34,9 @@ position: absolute;
 }
 .parte3{
     position: relative;
+    height: 100%;
+    background-size: cover;
+
     z-index: 50;
 background-image: url("https://cdn.pixabay.com/photo/2018/08/29/22/52/woman-3640935_960_720.jpg");
 
