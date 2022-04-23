@@ -7,9 +7,9 @@ const initialState = {
     activities: [],
     searchForm: [],
     postmsj: [],
-    details: []
+    details: [],
+    favorites: []
 }
-
 function rootReducer(state = initialState, action) {
     switch (action.type) {
         case "GET_COUNTRIES":
@@ -188,6 +188,20 @@ function rootReducer(state = initialState, action) {
                 countries: action.payload,
                 countriesAux: action.payload
             }
+
+
+
+        case "GET_FAVORITE":
+            const statetotal = state.countriesAux
+            const stateFavorite = state.favorites
+            const vera = stateFavorite.find(e => e.id === action.payload)
+            //si vera es false , quiero q los filter el total con el id 
+            const mirar = vera === undefined && statetotal.filter(e => e.id === action.payload)
+            return {
+                ...state,
+                favorites: mirar ? state.favorites.concat(mirar) : state.favorites
+            }
+
 
 
         default:

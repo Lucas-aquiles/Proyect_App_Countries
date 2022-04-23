@@ -151,7 +151,12 @@ export function clearStateCountries() {
     }
 }
 
-
+export function getFavorite(payload) {
+    return {
+        type: "GET_FAVORITE",
+        payload
+    }
+}
 
 
 

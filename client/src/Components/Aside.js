@@ -8,7 +8,6 @@ import './Aside.css'
 const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {
 
     const allActivities = useSelector((state) => state.activities)
-    console.log(allActivities)
 
 
 
@@ -31,7 +30,6 @@ const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {
     let arrayAllActivities = allActivities.map(e => e.name)
     const dataArr = new Set(arrayAllActivities);
     let result = [...dataArr];
-    console.log(result)
     // --------------------------------------------------------
     var sumador = 1
     return (

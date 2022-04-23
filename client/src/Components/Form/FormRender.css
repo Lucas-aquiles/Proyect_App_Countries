@@ -171,3 +171,6 @@ align-self: center;
 .form_sumit:hover{
   background-color: #198754;
 }
+.icon{
+  z-index: 50;
+}

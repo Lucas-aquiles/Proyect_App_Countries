@@ -1,17 +1,21 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getCountries, filter_Activities, filter_Continent, orderlyByName, orderlyByPoblation, getCountriesFront, clearStateCountries } from '../action/index'
+import { getCountries, filter_Activities, filter_Continent, orderlyByName, orderlyByPoblation, getCountriesFront } from '../action/index'
 import Paginado from './Paginado';
 import Card from './Card';
 import './Home1.css'
 import Aside from './Aside';
 import Loader from "./Loader"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRightRotate } from '@fortawesome/free-solid-svg-icons'
+
+
+
 const Home1 = () => {
 
     const allCountries = useSelector((state) => state.countries)
-    console.log(allCountries)
 
     const dispatch = useDispatch()
 
@@ -37,7 +41,7 @@ const Home1 = () => {
     }
 
     function handlefilterAct(e) {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         if (e.target.value === "act") {
             dispatch(getCountries())
             setPagina("1")
@@ -72,7 +76,7 @@ const Home1 = () => {
         }
         if (e.target.value === "a_z" || e.target.value === "z_a") {
             dispatch(orderlyByName(e.target.value));
-            setPagina(1)
+            setPagina("1")
             setOrden(`Ordenado ${e.target.value}`)
             e.preventDefault();
 
@@ -85,7 +89,11 @@ const Home1 = () => {
         }
     }
 
+    function handleRecarga() {
+        dispatch(getCountries())
+        setPagina("1")
 
+    }
 
 
 
@@ -97,6 +105,11 @@ const Home1 = () => {
 
         <div className='container'>
             <header>
+                <div onClick={(e) => handleRecarga(e)} className='iconRecarga'>  <FontAwesomeIcon className="iconFontRecarga" icon={faArrowRightRotate} />  </div>
+                <button className='bth link'> Red Social </button>
+
+                <button className='bth link'>  <Link className='link' to="/favorite"> Favorities </Link>       </button>
+
                 <button className='bth'> <Link className='link' to="/create"> Crear Actividades</Link>  </button>
 
             </header>

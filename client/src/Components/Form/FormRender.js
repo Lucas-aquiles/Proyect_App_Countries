@@ -28,7 +28,7 @@ const FormRender = () => {
   let [error, setError] = useState('');
   let [error1, setError1] = useState('');
   // console.log(error)
-  console.log(error1)
+  // console.log(error1)
   const [init, setInit] = useState(false)
 
   const [input, setInput] = useState({
@@ -39,7 +39,7 @@ const FormRender = () => {
     country: []
 
   })
-  console.log(input.country)
+  // console.log(input.country)
   useEffect(() => {
     setTimeout(() => {
       setSearchAux(false)
@@ -268,7 +268,6 @@ const FormRender = () => {
 
 
           {/* ---------------------------------------------------------- */}
-
         </div>
 
         <div className='item_containerFormulario1'>
@@ -276,7 +275,7 @@ const FormRender = () => {
             <input type="text" name='name' value={ver} onChange={inputSearch} placeholder="Country Search" />
             <button className='buton_padrastro' onClick={sendDis}>Search</button>
           </div>
-          {console.log(dataSearch)}
+          {/* {console.log(dataSearch)} */}
           {dataSearch.length === 0 && serchAux ? <p className='error_p'> "No encontrado"  </p> : dataSearch.map(e =>
             <div key={e.id} className='searchfilter'>
               <div className='searchFF'> <img className='imgForm' src={e.flag_image} alt="" /></div>

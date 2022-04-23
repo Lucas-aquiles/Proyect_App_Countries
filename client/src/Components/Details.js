@@ -16,9 +16,9 @@ const Details = () => {
     const dispatch = useDispatch();
     const params = useParams();
     let addres = params.id;
-    console.log(addres)
+    // console.log(addres)
     const dateDetails = useSelector((state) => state.details)
-    console.log(dateDetails)
+    // console.log(dateDetails)
     const [init, setInit] = useState(false)
 
 
