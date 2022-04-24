@@ -27,3 +27,6 @@ code {
     monospace;
 }
 /* filter:invert(1); */
+.appclass{
+  display: flex;
+}

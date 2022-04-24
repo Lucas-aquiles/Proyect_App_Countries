@@ -4,22 +4,25 @@
     background: salmon;
     display: flex;
     flex-direction: row;
+    font-family: 'Poppins', sans-serif;
+
+
 }
-.sorpresa >div{
+ .sorpresa >div{
     width: 50%;
-}
-.itemquestion1{
-    height: 35%;
+    height: 100%;
     border-right:solid;
 }
+ .itemquestion1{
+    height: 35%;
+}
 .itemquestion2{
-    padding-top: 5rem;
-    border-right: solid;
     height: 65%;
-    /* display: none; */
+
 }
 
-.itemquestion1>h1{
+ .itemquestion1>h1{
+     padding-top: 4rem;
     text-align: center;
     font-family: 'Poppins', sans-serif; 
     font-size: 2.7rem;
@@ -33,22 +36,20 @@
     font-family: 'Poppins', sans-serif; 
     font-size: 1.7rem;
     color: rgb(254, 255, 255);
+    text-align: center;
+}
+.itemquestion1>button:hover{
+    background: rgb(170, 81, 170);
 }
 .itemquestion2 >h2{
+    padding-top: 5rem;
     text-align: center;
     font-family: 'Poppins', sans-serif; 
     font-size: 2.7rem;
     color: rgb(254, 255, 255);
 }
 
-/* .itemquestion2{
-    display: none;
-    transition: all 300ms;
-} */
 
-
-
- /*  */
 
  .randondiv{
 display: flex;
@@ -60,21 +61,74 @@ margin-top: 5rem;
     position: relative;
     text-align: center;
     font-family: 'Poppins', sans-serif; 
-    font-size: 2.7rem;
+    font-size: 2.4rem;
     color: rgb(254, 255, 255);
     margin-left: 5rem;
+    overflow:hidden;
+
 }
 
 
  .randondiv>img{
      position: relative;
-     width: 8rem;
+     width: 7rem;
      border-radius: 1rem;
      margin-right: 6rem;
  }
  .padresecundario{
-     margin-top: 8rem;
+     margin-top: 5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
  }
+ .borrar{
+     border: transparent
+ }
+ .padresecundario >button{
+     width: 15rem;
+border-radius: 10px 10px  10px 10px ;
+color:white;
+text-align: center;
+    font-family: 'Poppins', sans-serif; 
+    font-size: 1.3rem;
+    cursor: pointer;
+    background: #96928d;
+    overflow:hidden;
+
+
+}  
+
+.padresecundario >button:hover{
+    background:  #ffc107;
+}
+.mitad{
+    width: 50%;
+}
+.perfect{
+    width: 100%;
+    height: 5rem;
+    background-color: rgb(82, 119, 26);
+    color:white;
+text-align: center;
+    font-family: 'Poppins', sans-serif; 
+    font-size: 2rem; 
+    overflow:hidden;
+
+}
+
+.segui{
+    position:absolute;
+    color:white;
+text-align: center;
+    font-family: 'Poppins', sans-serif; 
+    width: 42.5rem;
+    height: 5rem;
+    background-color: rgb(245, 12, 12);
+    font-size: 2rem; 
+    bottom: 1.1rem;
+    overflow:hidden;
+
+}
+.ocultar{
+    display: none;
+}

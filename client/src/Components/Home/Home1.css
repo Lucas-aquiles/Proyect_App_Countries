@@ -9,10 +9,8 @@
 }
 
 .container{
-  margin-right: 0rem;
-  padding: 0;
 height: auto;
-
+width: 84.6rem;
 }
 
 header{
@@ -104,7 +102,7 @@ color: aliceblue;
     display: flex;
 justify-content: space-around;
 align-items: stretch ;  
-width: 84.3rem;
+width: 100%;
 }
 section{
     display: flex;
@@ -118,6 +116,8 @@ aside{
     border-left:solid rgb(127, 0, 255,0.6);
     background: transparent;
     width: 20%;
+    padding: 0;
+    margin: 0;
     
 }
 

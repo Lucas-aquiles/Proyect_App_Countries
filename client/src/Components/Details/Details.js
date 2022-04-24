@@ -38,9 +38,7 @@ const Details = () => {
 
 
 
-    function handleClick() {
 
-    }
     function convertirNumero(parametro) {
         var poblacion = String(parametro)
         var array = [];
@@ -84,7 +82,7 @@ const Details = () => {
                 </div>
             </div>
             <div className="item_2Details">
-                <div className="icon" onClick={e => handleClick(e)}  >
+                <div className="icon"   >
                     <Link to="/home" >
                         <FontAwesomeIcon className="iconFont" icon={faAngleLeft} />  </Link>          </div>
                 <div className="father">
