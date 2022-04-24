@@ -1,16 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { getCountries, filter_Activities, filter_Continent, orderlyByName, orderlyByPoblation, getCountriesFront } from '../action/index'
-import Paginado from './Paginado';
-import Card from './Card';
+import { getCountries, filter_Activities, filter_Continent, orderlyByName, orderlyByPoblation, getCountriesFront } from '../../action/index'
+import Paginado from '../Paginado/Paginado';
+import Card from '../Card/Card';
 import './Home1.css'
-import Aside from './Aside';
-import Loader from "./Loader"
+import Aside from '../Aside/Aside';
+import Loader from "../Loader/Loader"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRightRotate } from '@fortawesome/free-solid-svg-icons'
-
+import { faArrowRightRotate, faQuestion } from '@fortawesome/free-solid-svg-icons'
 
 
 const Home1 = () => {
@@ -106,8 +105,7 @@ const Home1 = () => {
         <div className='container'>
             <header>
                 <div onClick={(e) => handleRecarga(e)} className='iconRecarga'>  <FontAwesomeIcon className="iconFontRecarga" icon={faArrowRightRotate} />  </div>
-                <button className='bth link'> Red Social </button>
-
+                <button className='bth link'>   <Link className='link' to="/question">  <FontAwesomeIcon className="iconFontRecarga" icon={faQuestion} /> </Link> </button>
                 <button className='bth link'>  <Link className='link' to="/favorite"> Favorities </Link>       </button>
 
                 <button className='bth'> <Link className='link' to="/create"> Crear Actividades</Link>  </button>

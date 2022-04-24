@@ -4,8 +4,8 @@ import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { getCountries } from '../action/index'
-import Loader from "./Loader";
+import { getCountries } from '../../action/index'
+import Loader from "../Loader/Loader";
 import "./LandingPage.css"
 
 import { Link } from 'react-router-dom';

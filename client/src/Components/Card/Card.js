@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { getFavorite } from '../action/index'
+import { getFavorite } from '../../action/index'
 
 
 

@@ -11,7 +11,7 @@ import Error from './Error'
 import Creado from './Creado'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleLeft } from '@fortawesome/free-solid-svg-icons'
-import Loader from '../Loader';
+import Loader from '../Loader/Loader';
 
 
 const FormRender = () => {

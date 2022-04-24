@@ -2,11 +2,12 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import React from "react";
 
-import Home1 from './Components/Home1';
-import LandingPage from './Components/LandingPage';
-import Details from './Components/Details';
+import Home1 from './Components/Home/Home1';
+import LandingPage from './Components/LandingPage/LandingPage';
+import Details from './Components/Details/Details';
 import FormRender from './Components/Form/FormRender';
-import Favorite from './Components/Favorite';
+import Favorite from './Components/Favorite/Favorite';
+import Sorpresa from './Components/Sorpresa/Sorpresa';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path='/create' element={<FormRender />} />
       <Route path='details/:id' element={<Details />} />
       <Route path='/favorite' element={<Favorite />} />
+      <Route path='/question' element={<Sorpresa />} />
     </Routes>
 
 

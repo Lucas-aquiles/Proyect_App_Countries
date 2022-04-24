@@ -1,0 +1,80 @@
+.sorpresa{
+    width: 85.1rem;
+    height: 100vh;
+    background: salmon;
+    display: flex;
+    flex-direction: row;
+}
+.sorpresa >div{
+    width: 50%;
+}
+.itemquestion1{
+    height: 35%;
+    border-right:solid;
+}
+.itemquestion2{
+    padding-top: 5rem;
+    border-right: solid;
+    height: 65%;
+    /* display: none; */
+}
+
+.itemquestion1>h1{
+    text-align: center;
+    font-family: 'Poppins', sans-serif; 
+    font-size: 2.7rem;
+    color: rgb(254, 255, 255);
+}
+.itemquestion1>button{
+    border-radius: 5px 5px 5px 5px ;
+    width: 85%;
+    position:relative;
+    left: 2rem;
+    font-family: 'Poppins', sans-serif; 
+    font-size: 1.7rem;
+    color: rgb(254, 255, 255);
+}
+.itemquestion2 >h2{
+    text-align: center;
+    font-family: 'Poppins', sans-serif; 
+    font-size: 2.7rem;
+    color: rgb(254, 255, 255);
+}
+
+/* .itemquestion2{
+    display: none;
+    transition: all 300ms;
+} */
+
+
+
+ /*  */
+
+ .randondiv{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+margin-top: 5rem;
+}
+.randondiv>h2{
+    position: relative;
+    text-align: center;
+    font-family: 'Poppins', sans-serif; 
+    font-size: 2.7rem;
+    color: rgb(254, 255, 255);
+    margin-left: 5rem;
+}
+
+
+ .randondiv>img{
+     position: relative;
+     width: 8rem;
+     border-radius: 1rem;
+     margin-right: 6rem;
+ }
+ .padresecundario{
+     margin-top: 8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+ }

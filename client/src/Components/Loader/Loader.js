@@ -1,6 +1,6 @@
 import React from 'react'
 import './Loader.css'
-import Avion from '../Images/flight.png'
+import Avion from '../../Images/flight.png'
 
 const Loader = () => {
     return (

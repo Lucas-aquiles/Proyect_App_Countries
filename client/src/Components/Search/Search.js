@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { searchCountry } from '../action/index';
+import { searchCountry } from '../../action/index';
 import './Search.css'
 
 

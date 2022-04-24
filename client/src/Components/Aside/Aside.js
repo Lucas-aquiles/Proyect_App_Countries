@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getActivities, clearError_Create } from '../action/index'
-import Search from './Search';
-import ErrorSearch from './ErrorSearch'
+import { getActivities, clearError_Create } from '../../action/index'
+import Search from '../Search/Search';
+import ErrorSearch from './ErrorSearch/ErrorSearch'
 import './Aside.css'
 
 const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {

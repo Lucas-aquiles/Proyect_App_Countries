@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { callId, clearDetails } from "../action/index"
-import Loader from "./Loader";
+import { callId, clearDetails } from "../../action/index"
+import Loader from "../Loader/Loader";
 import './Details.css'
 import { Link } from 'react-router-dom';
 
@@ -43,7 +43,6 @@ const Details = () => {
     }
     function convertirNumero(parametro) {
         var poblacion = String(parametro)
-        console.log(typeof (poblacion))
         var array = [];
         let poblacionRevers = poblacion.split("").reverse()
         for (var i = 0; poblacionRevers.length >= i; i += 3) {
@@ -52,7 +51,6 @@ const Details = () => {
         var cstr = array.join('')
         var strConvertido = cstr.replaceAll(",", "")
         var numeroCasi = (strConvertido.split("").reverse().join(""))
-        console.log(numeroCasi)
 
         if (numeroCasi[1] === ".") {
             return (numeroCasi.slice(2, numeroCasi.length))
