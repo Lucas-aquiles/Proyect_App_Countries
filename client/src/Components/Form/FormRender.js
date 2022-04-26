@@ -234,7 +234,7 @@ const FormRender = () => {
 
       <form className='container_Formulario' onSubmit={e => handleSubmit(e)} >
         <div className='item_containerFormulario' >
-          <label>Nombre:
+          <label className='labelverqonda'>Nombre:
             <input className='inputformulario' type="text"
               name="name"
               placeholder="Nombre"
