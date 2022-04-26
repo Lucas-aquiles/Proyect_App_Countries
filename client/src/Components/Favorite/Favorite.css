@@ -96,7 +96,7 @@ background-image: url("https://cdn.pixabay.com/photo/2018/08/29/22/52/woman-3640
 
 .card2{   
 width: 10rem;
-
+cursor:pointer;
 border-width: 0.2rem;
  border-radius: 10px;
  height: 10rem;

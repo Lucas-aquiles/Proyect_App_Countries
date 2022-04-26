@@ -34,7 +34,7 @@ header{
  }
  .iconFontRecarga{
   border-radius: 2rem;
-
+cursor:pointer;
   text-align: center;
   width:2.7rem;
   height:2.7rem;
