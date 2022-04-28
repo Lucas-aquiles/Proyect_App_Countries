@@ -120,8 +120,7 @@ function rootReducer(state = initialState, action) {
             return {
                 ...state,
                 countries: action.payload.length === 0 ? notdat : action.payload
-            }
-                ;
+            };
 
 
         case 'GET-COUNTRIES_FRONT':

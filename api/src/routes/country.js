@@ -78,6 +78,7 @@ server.get('/:id', (req, res) => {
                 }
             }
             ).then(respuesta => res.status(200).json(respuesta))
+
         } else { res.status(404).send("ID equivocado") }
         // -----------------------------
         // res.status(200).json(idBd)

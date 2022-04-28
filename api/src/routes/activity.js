@@ -11,7 +11,10 @@ server.post('/', async (req, res) => {
 
     let { name, difficulty, duration, season, country } = req.body
     // console.log(name, difficulty, duration, season, country)
-    let nameMin = name.trim().toLocaleLowerCase()
+
+    let nameChange = name.trim().toLocaleLowerCase()
+    let nameMin = nameChange.charAt().toLocaleUpperCase() + nameChange.slice(1)
+
     let difficultyChange = difficulty[1].trim()
     let seasonChange = season.map(e => e.name.trim().slice(0, 6).trim())
 

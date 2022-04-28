@@ -8,13 +8,13 @@ export default function Paginado({ sizeArray, allCountries, paginado, pagina, se
     // pagina current page
 
     const [pageNumberLimit, setpageNumberList] = useState(5);
-    const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
-    const [minPageNumberLimit, setminPageNumberLimit] = useState(0)
+    const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5); // 10//15
+    const [minPageNumberLimit, setminPageNumberLimit] = useState(0) // 5//10
 
 
 
 
-    const pageNumber = []//1.2.3.4.5.6.7.8.9.10.....
+    const pageNumber = []//1.2.3.4.5.6.7.8.9.10.....25
     for (let i = 1; i <= Math.ceil(allCountries / sizeArray); i++) {
 
         pageNumber.push(i)
@@ -23,21 +23,27 @@ export default function Paginado({ sizeArray, allCountries, paginado, pagina, se
 
 
     const handleNextbtn = () => {
-        setPagina(pagina + 1);
+        setPagina(pagina + 1); // 6
 
-        if (pagina + 1 > maxPageNumberLimit) {
-            setmaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit);
-            setminPageNumberLimit(minPageNumberLimit + pageNumberLimit);
+        if (pagina + 1 > maxPageNumberLimit) { // 6>5
+            console.log(pagina)
+            setmaxPageNumberLimit(maxPageNumberLimit + pageNumberLimit); //5+5 //10+5
+            setminPageNumberLimit(minPageNumberLimit + pageNumberLimit); //0+5//5+5
         }
 
     }
 
     const handlePrevbtn = () => {
-        setPagina(pagina - 1);
+        setPagina(pagina - 1);  //
 
         if ((pagina - 1) % pageNumberLimit === 0) {
+            console.log(pagina)
+            // si siempre es divisible por   %  5 ==== 0
+
             setmaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
-            setminPageNumberLimit(minPageNumberLimit - pageNumberLimit);
+            //  15-5 = 10
+
+            setminPageNumberLimit(minPageNumberLimit - pageNumberLimit); // 10-5 = 5
         }
     }
 
@@ -65,7 +71,7 @@ export default function Paginado({ sizeArray, allCountries, paginado, pagina, se
 
             {
                 pageNumber.map((number) => {
-
+                    //   6<11 y 6>5 {    }
                     if (number < maxPageNumberLimit + 1 && number > minPageNumberLimit) {
                         return <div key={maximu++} className='pageNumbers'>
                             <button onClick={() => {

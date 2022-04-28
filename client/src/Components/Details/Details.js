@@ -26,6 +26,7 @@ const Details = () => {
     useEffect(() => {
 
         dispatch(callId(addres))
+
         setTimeout(() => {
             setInit(true)
         }, 2000);
