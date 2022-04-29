@@ -8,7 +8,8 @@ const initialState = {
     searchForm: [],
     postmsj: [],
     details: [],
-    favorites: []
+    favorites: [],
+    searchIntermedio: []
 }
 function rootReducer(state = initialState, action) {
     switch (action.type) {
@@ -22,17 +23,18 @@ function rootReducer(state = initialState, action) {
 
         case 'FILTER_ACTIVITIES':
 
-            const notdata = [{ name: 'No encontrado', id: "2d2", activities: "nada" }]
+            const notdata = [{ name: "No encontrado" }]
 
-            const countryState = state.countriesAux.length === 0 ? notdata : state.countriesAux
-            const paisFiltrado = countryState.filter(el => el.activities.find(e => e.name === action.payload))
-
+            const countryState = state.countries
+            // .length === 0 ? notdata : state.countries
+            let paisFiltrado = countryState[0].activities === undefined ? notdata : countryState.filter(el => el.activities.find(e => e.name === action.payload))
+            console.log(paisFiltrado)
 
 
             return {
 
                 ...state,
-                countries: paisFiltrado.length === 0 ? notdata : paisFiltrado
+                countries: paisFiltrado.length === 0 || undefined ? notdata : paisFiltrado
 
             };
 

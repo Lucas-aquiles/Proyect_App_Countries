@@ -13,29 +13,35 @@ import { faArrowRightRotate, faQuestion } from '@fortawesome/free-solid-svg-icon
 
 
 const Home1 = () => {
+    // var imge = "https://img.freepik.com/vector-gratis/consola-juegos-letras-letrero-neon-fondo-ladrillo_1262-11854.jpg?size=338&ext=jpg";
 
     const allCountries = useSelector((state) => state.countries)
+
     console.log(allCountries)
     const dispatch = useDispatch()
 
-    useEffect(() => {
-        // dispatch(clearStateCountries())
-        dispatch(getCountries())
-    }, [])
+    // useEffect(() => {
+    //     dispatch(getCountries())
+    // }, [])
+    // dispatch(clearStateCountries())
 
 
+    const [pageNumberLimit, setpageNumberList] = useState(5);
+    const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5); // 10//15
+    const [minPageNumberLimit, setminPageNumberLimit] = useState(0) // 5//10
+
+
+    const [lisen, setLisen] = useState("")
     const [orden, setOrden] = useState('');
 
     const [pagina, setPagina] = useState(1);
     const [sizeArray, setSize] = useState(10);
-    const indexLastCountry = pagina * sizeArray  // 1 * 10  = 10 // 2*10 = 20//
-    const indexFirstCountry = indexLastCountry - sizeArray //0   //     10  //   
-    // 0 * 10 // 
+    const indexLastCountry = pagina * sizeArray
+    const indexFirstCountry = indexLastCountry - sizeArray
+
 
     const currentCountry = allCountries.slice(indexFirstCountry, indexLastCountry)
-    // si estas en pag 1 , entregame 0-9 obj. si estas pag 2 entregame 10-19
-    //      devuelve 0 a 9             =   [250].slice ( 0,10) 
-    //          devuelve 10 a 19                            = [250].slice(10,20)
+
 
     function paginado(number) {
         setPagina(number)
@@ -91,16 +97,19 @@ const Home1 = () => {
     }
 
     function handleRecarga() {
-        dispatch(getCountries())
-        setPagina(1)
-
+        dispatch(getCountries());
+        setPagina(1);
+        setmaxPageNumberLimit(5);
+        setminPageNumberLimit(0)
     }
 
-
+    // if (allCountries.length === 1 && allCountries[0] === "No encontrado") {
+    //     return imge
+    // }
 
 
     let suma = 1
-
+    console.log(currentCountry)
     return allCountries.length === 0 ? (<Loader />) : (
 
 
@@ -134,7 +143,12 @@ const Home1 = () => {
                 <Paginado sizeArray={sizeArray}
                     allCountries={allCountries.length}
                     paginado={paginado} pagina={pagina}
-                    setPagina={setPagina} setSize={setSize} />
+                    setPagina={setPagina} setSize={setSize}
+                    maxPageNumberLimit={maxPageNumberLimit} setmaxPageNumberLimit={setmaxPageNumberLimit}
+                    minPageNumberLimit={minPageNumberLimit} setminPageNumberLimit={setminPageNumberLimit}
+                    pageNumberLimit={pageNumberLimit}
+
+                />
             </div>
 
         </div>

@@ -5,7 +5,7 @@ import SeasonCheckbox from './SeasonCheckbox'
 import { Link } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux'
-import { searchFilter, postActivities, clearActivities, clearError_Create } from '../../action/index'
+import { searchFilter, postActivities, clearActivities, clearError_Create, getCountries } from '../../action/index'
 import './FormRender.css'
 import Error from './Error'
 import Creado from './Creado'
@@ -144,7 +144,7 @@ const FormRender = () => {
   // ----------------------------------------------
   function handleSubmit(e) {
     e.preventDefault();
-    if ((input.name === "" || input.season.length === 0 || input.difficulty === " " || input.duration === " " || input.country.length === 0)) {
+    if ((input.name === "" || input.season.length === 0 || input.difficulty.length === 0 || input.duration === "" || input.country.length === 0)) {
       return alert("No se puede enviar , complete las categorias");
     } else {
 
@@ -218,7 +218,9 @@ const FormRender = () => {
     return errors1
   }
 
-
+  if (msjPost.data === "Creado") {
+    dispacth(getCountries())
+  }
 
 
   // --------------------

@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { getFavorite } from '../../action/index'
+import { getCountries, getFavorite } from '../../action/index'
 
 
 
@@ -20,9 +20,14 @@ export default function Card({ name, img, id, continent, population, capital }) 
     function handleFavorite(id) {
         dispatch(getFavorite(id))
     }
+    if (name === 'No encontrado') {
+        setTimeout(() => {
+            dispatch(getCountries())
 
+        }, 500);
+    }
 
-    return (
+    return (name === 'No encontrado') ? <h1 className='h1_Not'> "No encontrado"  </h1> : (
 
         <div className='container_card clasePrueba'>
             <FontAwesomeIcon onClick={(e) => handleFavorite(id)} className="iconFavorities" icon={faHeart} />

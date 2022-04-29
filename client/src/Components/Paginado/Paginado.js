@@ -1,19 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Paginado.css'
 
 
-export default function Paginado({ sizeArray, allCountries, paginado, pagina, setPagina, setSize }) {
+export default function Paginado({ sizeArray, allCountries, paginado, pagina, setPagina, setSize
+    , maxPageNumberLimit, setmaxPageNumberLimit, minPageNumberLimit, setminPageNumberLimit, pageNumberLimit
+}) {
 
     // const [numero, setNumero] = useState("1")
     // pagina current page
-
-    const [pageNumberLimit, setpageNumberList] = useState(5);
-    const [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5); // 10//15
-    const [minPageNumberLimit, setminPageNumberLimit] = useState(0) // 5//10
-
-
-
-
     const pageNumber = []//1.2.3.4.5.6.7.8.9.10.....25
     for (let i = 1; i <= Math.ceil(allCountries / sizeArray); i++) {
 

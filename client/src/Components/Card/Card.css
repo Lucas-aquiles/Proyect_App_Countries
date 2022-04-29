@@ -18,7 +18,12 @@
      -webkit-backdrop-filter: blur(0.1rem);
 color:rgb(107, 107, 107);
 }
+.h1_Not{
+    font-family: 'Poppins', sans-serif; 
+color:red;
+font-size: 2rem;
 
+}
 
 .container_card:hover   {
     transform: translateY(-10px);

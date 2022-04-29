@@ -18,7 +18,6 @@ server.post('/', async (req, res) => {
     let difficultyChange = difficulty[1].trim()
     let seasonChange = season.map(e => e.name.trim().slice(0, 6).trim())
 
-
     try {
         await validarActivity(nameMin, country);
     } catch (err) {

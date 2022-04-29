@@ -88,8 +88,9 @@ left: 1rem;
 margin: 1rem;
 }
 .father{
+    width: 90%;
     position: relative;
-    left: 5rem;
+    left: 2rem;
     top: 2.5rem;
 }
 .father >h1{

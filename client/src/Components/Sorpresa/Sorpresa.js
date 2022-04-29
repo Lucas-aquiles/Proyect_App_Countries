@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Sorpresa = () => {
 
-    const allPaises = useSelector((state) => state.countries)
+    const allPaises = useSelector((state) => state.countriesAux)
     const [paisoriginal, setPaisoriginal] = useState({})
     const [pais1, setPais1] = useState({})
     const [pais2, setPais2] = useState({})
@@ -108,7 +108,7 @@ const Sorpresa = () => {
         comprobar = "nada"
         setTimeout(() => {
             setChequear(false)
-        }, 3000);
+        }, 2000);
 
     }
     var comprobar1 = "ocultar"
@@ -116,7 +116,7 @@ const Sorpresa = () => {
         comprobar1 = "nada"
         setTimeout(() => {
             setChequear1(false)
-        }, 3000);
+        }, 2000);
 
     }
 
@@ -140,7 +140,7 @@ const Sorpresa = () => {
             <div className='mitad'>
                 <div className="icon"   >
                     <Link to="/home" >
-                        <FontAwesomeIcon className="iconFont" icon={faAngleLeft} />  </Link>          </div>
+                        <FontAwesomeIcon className="iconFont" icon={faAngleLeft} /> </Link></div>
                 <div className='itemquestion1' >
                     <h1>   ¿ Cuál es la capital de : ?  </h1>
 

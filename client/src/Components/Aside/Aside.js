@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getActivities, clearError_Create } from '../../action/index'
+import { getActivities, clearError_Create, getCountries } from '../../action/index'
 import Search from '../Search/Search';
 import ErrorSearch from './ErrorSearch/ErrorSearch'
 import './Aside.css'
 
 const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {
 
+
     const allActivities = useSelector((state) => state.activities)
 
-
+    const [alarma, setAlarma] = useState(allActivities.length)
 
     const eSearch = useSelector((state) => state.postmsj)
     const dispatch = useDispatch()
@@ -17,6 +18,7 @@ const Aside = ({ handlefilterAct, handlefilterContinent, handleOrderly }) => {
 
     useEffect(() => {
         dispatch(getActivities())
+
     }, [])//  eslint-disable-line react-hooks/exhaustive-deps
 
 
