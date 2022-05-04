@@ -17,7 +17,7 @@ const Home1 = () => {
 
     const allCountries = useSelector((state) => state.countries)
 
-    console.log(allCountries)
+    // console.log(allCountries)
     const dispatch = useDispatch()
 
     // useEffect(() => {
@@ -52,10 +52,14 @@ const Home1 = () => {
         if (e.target.value === "act") {
             dispatch(getCountries())
             setPagina(1)
+            setmaxPageNumberLimit(5);
+            setminPageNumberLimit(0)
         } else {
             e.preventDefault();
             dispatch(filter_Activities(e.target.value));
             setPagina(1);
+            setmaxPageNumberLimit(5);
+            setminPageNumberLimit(0)
             // setOrden(`Ordenado ${e.target.value}`)
         }
     }
@@ -63,14 +67,17 @@ const Home1 = () => {
     function handlefilterContinent(e) {
         if (e.target.value === "default") {
             dispatch(getCountriesFront())
-            setPagina(1)
+            setPagina(1);
+            setmaxPageNumberLimit(5);
+            setminPageNumberLimit(0)
         }
 
         else {
             e.preventDefault();
             dispatch(filter_Continent(e.target.value))
             setPagina(1)
-
+            setmaxPageNumberLimit(5);
+            setminPageNumberLimit(0)
         }
 
     }
@@ -79,6 +86,8 @@ const Home1 = () => {
         if (e.target.value === "default") {
             dispatch(getCountriesFront());
             setPagina(1)
+            setmaxPageNumberLimit(5);
+            setminPageNumberLimit(0)
 
         }
         if (e.target.value === "a_z" || e.target.value === "z_a") {
@@ -86,6 +95,8 @@ const Home1 = () => {
             setPagina(1)
             setOrden(`Ordenado ${e.target.value}`)
             e.preventDefault();
+            setmaxPageNumberLimit(5);
+            setminPageNumberLimit(0)
 
         }
         if (e.target.value === "menor_p" || e.target.value === "mayor_p") {
@@ -93,6 +104,8 @@ const Home1 = () => {
             setPagina(1);
             e.preventDefault();
             setOrden(`Ordenado ${e.target.value}`)
+            setmaxPageNumberLimit(5);
+            setminPageNumberLimit(0)
         }
     }
 

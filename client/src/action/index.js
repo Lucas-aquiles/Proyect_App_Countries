@@ -158,6 +158,12 @@ export function getFavorite(payload) {
     }
 }
 
+export function deletFavorite(payload) {
+    return {
+        type: "DELET_FAVORITE",
+        payload
+    }
+}
 
 
 

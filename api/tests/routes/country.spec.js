@@ -32,7 +32,7 @@ describe('GET /countries?name=queryValue', () => {
 
   describe('GET countries?name=ua', () => {
     it('debería responder con un status 200 cuando hay coincidencias', () =>
-      agent.get('/countries?name=ua').expect(200)
+      agent.get('/countries?name=Arg').expect(200)
     );
 
     it('debería retornar la informacion de los paises que matchean', (done) => {
