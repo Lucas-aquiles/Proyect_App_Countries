@@ -89,13 +89,4 @@ export default function Paginado({ sizeArray, allCountries, paginado, pagina, se
                 Load More</button> */}
 
         </div>)
-
-
-
-
-
-
-
-
-
 }
