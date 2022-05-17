@@ -63,3 +63,30 @@ color: salmon;
 .loadmore:focus {
     color: red;
   }
+ 
+    
+ 
+ 
+
+ @media screen  and (max-width: 550px){ 
+    .containerPag{
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      border:solid;
+      
+    }
+    .containerPag button{
+        width: 70%;
+        height: 70%;
+    }
+    .desactivar{
+        display: none;
+    }
+    
+
+
+}

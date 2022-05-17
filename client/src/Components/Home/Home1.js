@@ -130,7 +130,7 @@ const Home1 = () => {
             <header>
                 <div onClick={(e) => handleRecarga(e)} className='iconRecarga'>  <FontAwesomeIcon className="iconFontRecarga" icon={faArrowRightRotate} />  </div>
                 <button className='bth link'>   <Link className='link' to="/question">  <FontAwesomeIcon className="iconFontRecarga" icon={faQuestion} /> </Link> </button>
-                <button className='bth link'>  <Link className='link' to="/favorite"> Favorities </Link>       </button>
+                <button className='bth '>  <Link className='link ' to="/favorite"> Favorities </Link>       </button>
 
                 <button className='bth'> <Link className='link' to="/create"> Crear Actividades</Link>  </button>
 
@@ -139,7 +139,7 @@ const Home1 = () => {
             <div className="container1   ">
                 <section className="box  car" >
 
-                    {pagina === 1 ? currentCountry.slice(0, 9).map(e => <Card key={suma++} name={e.name}
+                    {pagina === 1 ? currentCountry.slice(0, 9).map(e => <Card className='cardmove' key={suma++} name={e.name}
                         img={e.flag_image} id={e.id} continent={e.continent} population={e.population} capital={e.capital} />) :
                         currentCountry.map(e => <Card key={suma++} name={e.name} img={e.flag_image} id={e.id} capital={e.capital} continent={e.continent} population={e.population} />)}
 

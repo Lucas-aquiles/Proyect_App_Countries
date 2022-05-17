@@ -9,8 +9,10 @@
 }
 
 .container{
-height: auto;
-width: 84.6rem;
+/* height: auto; */
+/* width: 84.6rem; */
+height: 100vh;
+     max-width: 100%;
 }
 
 header{
@@ -135,14 +137,111 @@ aside{
    
   } 
 
-  @media (min-width: 500px) {
+  /* @media screen and (min-width: 500px) {
+
     .car {
-      padding-left: 6rem;
+      padding-left: 10rem;
     }
   }
-  
-  @media (max-width: 300px) {
+   */
+  @media (max-width: 500px) {
     .container {
       flex-direction: column;
     }
   }
+
+  
+ @media screen  and (max-width: 550px){ 
+  .container{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    height: 100vh;
+    max-width: 100%;
+    /* background: yellow; */
+
+  }
+  header{
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+    height: 20vh;
+  }
+  header div{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 10%;
+    height: 10%;
+  }
+  .iconFontRecarga{
+
+    width: 60%;
+    height: 60%;
+  }
+
+.bth {
+  margin: 0;
+  padding: 0;
+  height: 10%;
+  /* border: solid; */
+  width: auto;
+  height: auto;
+}
+.link{
+  width: auto;
+  height: 30%;
+}
+  .container1{
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: none;
+    border: none;
+    background-image:none;
+    background:  rgb(127, 0, 255,0.3);
+
+
+
+  }
+  section{
+    margin:0;
+    padding:0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+ .car{
+   margin-left: 3%;
+ }
+  aside{
+    width: 100%;
+    border:none;  
+
+  }
+  /* .car{
+    margin-left:1% ;
+  } */
+
+
+
+
+
+
+
+
+
+
+
+.paginado{
+  display: block;
+  height: 10%;
+}
+
+
+
+}

@@ -4,8 +4,10 @@
     background-size : cover;
     display: flex;
     flex-direction: row;
-    width: 83.9rem;
+    /* width: 83.9rem;
+    height: 100vh; */
     height: 100vh;
+     max-width: 100%;
 }
 .icon{
     position: absolute;
@@ -119,4 +121,90 @@ margin: 1rem;
 .boy >h4{
     position: relative;
     left: 1rem;
+}
+
+ 
+@media screen  and (max-width: 550px){ 
+    .containerDetails{
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 0;
+    padding: 0;
+    }
+    .item_1Details{
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* display: none; */
+        width: 100%;
+
+    }
+.children{
+    display: flex;
+    flex-direction: row;
+    padding-bottom:2rem;
+    height: 30%;
+}
+.children img{
+    width: 30%;
+}
+.children h1{
+    width: 70%;
+    font-size: 150%;
+    margin-right: 2%;
+}
+.children1{
+    /* border:solid; */
+    height: 70%;
+    top:-2rem;
+    margin-right: 25%;
+    word-break:break-all;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.children1 >h4{
+    font-size: medium;
+/* margin-top: 1rem; */
+padding-bottom: -1rem;
+top:-0.5rem;
+}
+
+    .item_2Details{
+        height: 40%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .icon{
+        display: none;
+    } 
+.father{
+   top:0rem;
+}
+.father h1{
+    top: -10rem;
+
+}
+.boy{
+    top:5rem;
+
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    border: solid;
+}
+
+
+
+
+
+
+
 }
