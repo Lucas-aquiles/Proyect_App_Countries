@@ -1,43 +1,49 @@
 .lds-ellipsis{
     background: radial-gradient(circle, rgb(63, 238, 251) 6%, rgb(61, 209, 229) 24%, rgb(63, 197, 250) 81%, rgba(63,195,250) 83%, rgba(89, 150, 155, 0.874) 100%);
-    width: 85.2rem;
-height: 100vh;
+    /* width: 85.2rem;
+height: 100vh; */
+display: flex;
+    justify-content: center;
+    /* margin: 1rem; */
+    height: 100vh;
+    max-width: 100%;
 }
 .lds-ellipsis div >img {
     background-size : contain; 
-    width: 6.5rem;
+    width: 100%;
     height: auto;
 
 }
 
   .lds-ellipsis div {
+    display: flex;
       text-align: center;
       padding-top:1rem ;
     position: absolute;
-    top: 18rem;
-    margin-left: 21rem;
-    width: 7rem;
-    height: 7rem;
-    border: solid rgb(255, 255, 255,0.5);
-    border-radius: 50%;
-    background: rgb(255, 255, 255,0.9);
+    top: 39%;
+    margin-left: 25%;
+    width: 8%;
+    height: 19%;
+    /* border: solid rgb(255, 255, 255,0.5); */
+    /* border-radius: 50%; */
+    /* background: rgb(255, 255, 255,0.9); */
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
     /* especifica cómo una animación CSS debe avanzar sobre la duración de cada ciclo */
   }
   .lds-ellipsis div:nth-child(1) {
-    left: 72px;
+    left: 3%;
     animation: lds-ellipsis1 0.9s infinite;
   }
   .lds-ellipsis div:nth-child(2) {
-    left: 166px;
+    left: 12%;
     animation: lds-ellipsis2 0.9s infinite;
   }
   .lds-ellipsis div:nth-child(3) {
-    left: 330px;
+    left: 23%;
     animation: lds-ellipsis2 0.9s infinite;
   }
   .lds-ellipsis div:nth-child(4) {
-    left: 504px;
+    left: 35%;
     animation: lds-ellipsis3 0.9s infinite;
   }
   @keyframes lds-ellipsis1 {
@@ -61,6 +67,13 @@ height: 100vh;
       transform: translate(0, 0);
     }
     100% {
-      transform: translate(70px, 0);
+      transform: translate(32%, 0);
     }
   }
+
+  /* @media screen  and (max-width: 920px){ 
+    .container__vector img{
+        width: 500px;
+    }
+    
+}  */

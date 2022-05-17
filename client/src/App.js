@@ -8,10 +8,13 @@ import Details from './Components/Details/Details';
 import FormRender from './Components/Form/FormRender';
 import Favorite from './Components/Favorite/Favorite';
 import Sorpresa from './Components/Sorpresa/Sorpresa';
+// import Ver from './Components/Ver.js';
 
 function App() {
   return (
     <Routes>
+      {/* <Route path="/" element={<Ver />} /> */}
+
       <Route path="/" element={<LandingPage />} />
       <Route path="/home" element={<Home1 />} />
       <Route path='/create' element={<FormRender />} />

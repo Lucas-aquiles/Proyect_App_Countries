@@ -30,7 +30,6 @@ const LandingPage = () => {
             <div className='container_lang'>
                 <div className='item_1'>
                     <h1 >Country App</h1>
-
                     <p>
                         Encuentra paises,
                         crea nuevas actividades ,
@@ -41,9 +40,9 @@ const LandingPage = () => {
                     </Link>
                 </div>
                 <div className='item_2'>
-                    <p>Contact me:</p>
+                    <p>Contáctame:</p>
                     <a href="https://www.linkedin.com/in/manuel-lucas-echegaray/" target="_blank" rel="noreferrer"><FontAwesomeIcon className='fa' icon={faLinkedin} /> Linkedin </a>
-                    <a href="https://www.instagram.com/l_echegaray/" target="_blank" rel="noreferrer" ><FontAwesomeIcon className='fa' icon={faInstagram} /> Instagram</a>
+                    <a className='itemInstagram' href="https://www.instagram.com/l_echegaray/" target="_blank" rel="noreferrer" ><FontAwesomeIcon className='fa' icon={faInstagram} /> Instagram</a>
 
                 </div>
             </div>

@@ -6,7 +6,6 @@ const Loader = () => {
     return (
         <div className='lds-ellipsis'>
 
-
             <div> <img src={Avion} alt=""></img> </div>
             <div> <img src={Avion} alt="" ></img>   </div>
             <div> <img src={Avion} alt="" ></img> </div>
