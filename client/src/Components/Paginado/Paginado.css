@@ -82,6 +82,7 @@ color: salmon;
     .containerPag button{
         width: auto;
         height: auto;
+        padding: 0.5rem;
     }
     .desactivar{
         display: none;
