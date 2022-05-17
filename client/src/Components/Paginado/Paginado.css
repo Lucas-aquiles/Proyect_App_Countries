@@ -80,13 +80,16 @@ color: salmon;
       
     }
     .containerPag button{
-        width: 70%;
-        height: 70%;
+        width: auto;
+        height: auto;
     }
     .desactivar{
         display: none;
     }
-    
+    /* .loadmo{
+        width: 2rem;
+        background: red;
+    } */
 
 
 }

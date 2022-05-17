@@ -5,8 +5,9 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
   background: rgb(197, 197, 84);
-  height: 100%;
-  width: 84.3rem;
+  
+  height: auto;
+  max-width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -173,4 +174,48 @@ align-self: center;
 }
 .icon{
   z-index: 50;
+}
+
+
+
+@media screen  and (max-width: 550px){ 
+  .father_form{
+    margin: 0;
+    padding: 0;
+    height: auto;
+    max-width: 100%;
+   
+   
+  }
+  .container_Formulario{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-image: none;
+    background-color: burlywood;
+
+  }
+  .item_containerFormulario{
+    display: flex;
+    flex-direction: column;
+  width: 70%;
+  left:15%;
+  }
+.item_containerFormulario1{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+width: 70%;
+left:15%;
+}
+.iconFont{
+  display: none;
+}
+.form_sumit{
+  position: relative;
+  left: -2.3rem;
+}
+
+
 }

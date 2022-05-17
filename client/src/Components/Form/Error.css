@@ -26,3 +26,28 @@
     .error >button:hover{
         background: #dc3545;
     }
+
+
+    @media screen  and (max-width: 550px){ 
+      .error{
+        max-width: 100%;
+        font-size: medium;
+        position:absolute;
+        height: 50%;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+
+
+    
+    
+    }
+       
+      .error h1{
+        margin-top: 25%;
+        font-size:larger;
+        /* color: #dc3545; */
+      }
+       
+
+    }

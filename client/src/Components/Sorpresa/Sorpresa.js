@@ -10,13 +10,14 @@ import { Link } from 'react-router-dom';
 const Sorpresa = () => {
 
     const allPaises = useSelector((state) => state.countriesAux)
+    console.log(allPaises)
     const [paisoriginal, setPaisoriginal] = useState({})
     const [pais1, setPais1] = useState({})
     const [pais2, setPais2] = useState({})
     const [chequear, setChequear] = useState(false)
     const [chequear1, setChequear1] = useState(false)
     const [paismundial, setPaismundial] = useState(0)
-
+    console.log(paismundial)
 
 
     var paisuplente1 = Math.floor(Math.random() * (250 - 0 + 1)) + 0;
@@ -41,6 +42,7 @@ const Sorpresa = () => {
     }
     var sum = 0;
     let savePoblation = allPaises.map(elemento => sum += elemento.population)
+    console.log(sum)
     function handlePoblation(e) {
         setPaismundial(convertirNumero(sum))
     }
@@ -132,7 +134,7 @@ const Sorpresa = () => {
 
                 <div className='itemquestion2'>
                     <h2>  Habitantes:   </h2>
-                    <h2>{paismundial}</h2>
+                    <h2 className='paus'>{paismundial}</h2>
                 </div>
             </div>
 

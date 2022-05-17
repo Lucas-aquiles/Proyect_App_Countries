@@ -132,3 +132,53 @@ text-align: center;
 .ocultar{
     display: none;
 }
+
+
+
+@media screen  and (max-width: 550px){ 
+    .sorpresa{
+      max-width: 100%;
+      font-size: medium;
+     
+      height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+    } 
+    .sorpresa div{
+        width: 100%;
+        height: auto;
+        border:none;
+    }
+    .sorpresa h1 {
+        font-size:larger;
+
+    }
+    .sorpresa h2 {
+        font-size:larger;
+
+    }
+
+    .sorpresa button {
+        font-size:larger;
+        word-wrap: break-word;
+
+    }
+.itemquestion2{
+    margin-top:-5rem;
+}
+.paus{
+    position: relative;
+    top:-5rem;
+}
+.mitad{
+    position: relative;
+    top:-8rem;
+
+}
+.segui{
+    position: relative;
+    margin-top:1rem
+}
+
+}

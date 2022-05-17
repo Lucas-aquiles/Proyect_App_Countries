@@ -59,7 +59,7 @@ const Favorite = () => {
                         {allFavorite.map(e =>
                             <div key={max++} className="card2">
                                 <h2>{e.id}</h2>
-                                <button onClick={(evento) => handledelet(e.id)} >x</button>
+                                {/* <button onClick={(evento) => handledelet(e.id)} >x</button> */}
                                 <img src={e.flag_image} alt="" />
                                 <h1>  {e.name}  </h1>
                             </div>
