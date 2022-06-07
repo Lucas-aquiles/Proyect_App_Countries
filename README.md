@@ -30,5 +30,5 @@
  --Diseñar y desarrollar una App de países que incluía: búsquedas, filtrados, ordenamientos y creación
  --Desarrollar la app usando para el Front React, Redux, CSS puro y Back desarrollado en Node.js con Express. Base de datos en PostgreSQL y Sequelize.
  
-  ----------------APP DEPLOY-------------------------------- 
-  https://countries-app-lime.vercel.app/
+  ## -APP DEPLOY-
+  ##  https://countries-app-lime.vercel.app/
