@@ -31,4 +31,5 @@
  --Desarrollar la app usando para el Front React, Redux, CSS puro y Back desarrollado en Node.js con Express. Base de datos en PostgreSQL y Sequelize.
  
   ## -APP DEPLOY-
-  ##  https://countries-app-lime.vercel.app/
+    ##  <a href="https://countries-app-lime.vercel.app/" target="_blank"> Countries-app </a>
+  
