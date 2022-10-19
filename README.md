@@ -1,9 +1,11 @@
 
 
 <p align="left">
-  <img height="200" src="./Captura de pantalla (59).png" />
+  <img height="400" src="./Captura de pantalla (59).png" />
 </p>
-
+<p align="left">
+  <img height="400" src="Captura de pantalla (58).png" />
+</p>
 ## Objetivos del Proyecto
 
 - Construir una App utlizando React, Redux, Node y Sequelize.
