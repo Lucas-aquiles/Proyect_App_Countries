@@ -10,13 +10,6 @@
 
 - Construir una App utlizando React, Redux, Node y Sequelize.
 
-### Únicos Endpoints/Flags que pueden utilizar
-
-  - GET https://restcountries.com/v3/all
-  - GET https://restcountries.com/v3/name/{name}
-  - GET https://restcountries.com/v3/alpha/{code}
-
-
 #### Tecnologías necesarias:
 - [ ] React
 - [ ] Redux
