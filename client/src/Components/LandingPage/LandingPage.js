@@ -1,7 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getCountries } from '../../action/index'
@@ -33,7 +32,7 @@ const LandingPage = () => {
                     <p>
                         Encuentra paises,
                         crea nuevas actividades ,
-                        vamos....
+                        vamos...
                     </p>
                     <Link to="/home" className='wrap'>
                         <button className='btlp' >Ingresar</button>

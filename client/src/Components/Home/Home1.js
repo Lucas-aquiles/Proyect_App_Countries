@@ -17,7 +17,7 @@ const Home1 = () => {
 
     const allCountries = useSelector((state) => state.countries)
 
-    // console.log(allCountries)
+    console.log("aaaaaaaaaaaa",allCountries)
     const dispatch = useDispatch()
 
     // useEffect(() => {
@@ -122,7 +122,7 @@ const Home1 = () => {
 
 
     let suma = 1
-    console.log(currentCountry)
+    // console.log(currentCountry)
     return allCountries.length === 0 ? (<Loader />) : (
 
 
